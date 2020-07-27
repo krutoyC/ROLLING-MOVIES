@@ -7,7 +7,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry:{
       index: './src/js/index.js',
-      admin: './src/js/admin.js'
+      admin: './src/js/admin.js',
+      error:'./src/js/error.js',
+      infoSeries:'./src/js/infoSeries.js',
+      acercaDeNosotros:'./src/js/acercaDeNosotros.js',
     },
   output: {
     filename: 'js/[name].js',
@@ -64,6 +67,48 @@ module.exports = {
             chunks:['admin'],
             filename:'./admin.html'
         }),
+        new HtmlWebpackPlugin({
+          template: './src/error.html',
+          minify:{
+            collapseWhitespace: true,
+            removeComments: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            useShortDoctype: true
+          },
+          inject:true,
+          chunks:['error'],
+          filename:'./error.html'
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/acercaDeNosotros.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject:true,
+        chunks:['acercaDeNosotros'],
+        filename:'./acercaDeNosotros.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/infoSeries.html',
+      minify:{
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      },
+      inject:true,
+      chunks:['infoSeries'],
+      filename:'./infoSeries.html'
+  }),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
     }),
