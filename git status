@@ -1,0 +1,29 @@
+[33mcommit 6c0c6da7736de6d84a5533e6a95808e5423e66cf[m[33m ([m[1;36mHEAD -> [m[1;32mmaquetaindex[m[33m, [m[1;31morigin/maquetaindex[m[33m)[m
+Author: Carlos M. Rodriguez <carlosnotengo1@gmail.com>
+Date:   Tue Jul 28 23:46:14 2020 -0300
+
+    se agregaron estilos en la hoja style.css
+
+[33mcommit 0ad49966526b7e5f44b4e46d428f83e6a3488ae0[m
+Author: Carlos M. Rodriguez <carlosnotengo1@gmail.com>
+Date:   Tue Jul 28 22:56:51 2020 -0300
+
+    se ubico los elementos de la estructura principal
+
+[33mcommit 92f80fa00f9e64d962d78c8ae18301a269f23f25[m[33m ([m[1;31morigin/DEV[m[33m)[m
+Author: Carlos M. Rodriguez <carlosnotengo1@gmail.com>
+Date:   Sun Jul 26 23:17:53 2020 -0300
+
+    se agregaron entradas en html y js
+
+[33mcommit fd58dd9b7fda92f1baac3555a668bec118e9c877[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Carlos M. Rodriguez <carlosnotengo1@gmail.com>
+Date:   Sun Jul 26 02:56:24 2020 -0300
+
+    se agrego la configuracion de imagenes
+
+[33mcommit 047e97146cd844f167da78c2e2f2195be1003261[m
+Author: Carlos M. Rodriguez <carlosnotengo1@gmail.com>
+Date:   Sun Jul 26 02:38:36 2020 -0300
+
+    se agregaron entradas para JS y HTML
