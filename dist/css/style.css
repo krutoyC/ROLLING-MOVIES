@@ -15,9 +15,15 @@ h1{
 
 h3{
     color: aliceblue;
-    margin: 10PX;
+    margin: 10px;
 }
 
 
+#navbar{
+    background-color: #1279D6 !important;
+}
 
+#footer{
+    background-color: #1279D6 !important;
+}
 
