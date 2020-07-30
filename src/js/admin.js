@@ -6,7 +6,7 @@ import Pelicula from './pelicula.js'
 
 let listaPeliculas = [];
 
-window.agregarPelicula = function (event){
+window.agregarPelicula = function (event) {
     event.preventDefault();
     console.log("desde funcion agregar pelicula");
 
@@ -18,15 +18,15 @@ window.agregarPelicula = function (event){
     let publicado = document.getElementById('publicado').value;
     let imagen = document.getElementById('imagen').value;
     let trailer = document.getElementById('trailer').value;
-    
+
     //validar formulario
     //crear un objeto    
     let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, publicado, imagen, trailer);
-    console.log(peliculaNueva);      
+    console.log(peliculaNueva);
     //agregar objeto al arreglo
     listaPeliculas.push(peliculaNueva);
     //guardar en localStorage
     localStorage.setItem('peliculaKey', JSON.stringify(listaPeliculas));
-    
+
 };
 
