@@ -77,9 +77,12 @@
                         <tr>
                             <th scope="col">Codigo</th>
                             <th scope="col">Nombre</th>
+                            <th scope="col">Tipo</th>
                             <th scope="col">Categoria</th>
                             <th scope="col">Descripción</th>
                             <th scope="col">Publicado</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Trailer</th>
                             <th scope="col">Editar</th>
 
                         </tr>
@@ -88,7 +91,10 @@
                             <td>Zoolander</td>
                             <td>Pelicula</td>
                             <td>Comedia</td>
+                            <td>Descripcion</td>
                             <td>Si</td>
+                            <td>Imagen.png</td>
+                            <td>Video.mp4</td>
                             <td>
                                 <button class="btn btn-danger" ><i class="fas fa-trash"></i></button>
                                 <button class="btn btn-primary">Modificar</button>
@@ -114,15 +120,15 @@
                     </button>
                 </div>
                 <div class="modal-body bg-secondary text-light">
-                    <form  id="formulario">
+                    <form  onsubmit="agregarPelicula(event)">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Codigo</label>
-                            <input type="text" class="form-control" id="codigo" placeholder="Ingrese un codigo">
+                            <input type="text" class="form-control" id="codigo" placeholder="Ingrese un codigo" onblur="revisar()">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Nombre</label>
                             <input type="text" class="form-control" id="nombre"
-                                placeholder="How I Meet Your Mother">
+                                placeholder="Ingrese el nombre de la pelicula o serie">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Tipo</label>
@@ -138,9 +144,19 @@
                                 placeholder="Ingrese una Descripcion">
                         </div>
                         <div class="form-group">
+                            <label for="formGroupExampleInput2">Publicado</label>
+                            <input type="text" class="form-control" id="publicado"
+                                placeholder="Si o No">
+                        </div>
+                        <div class="form-group">
                             <label for="formGroupExampleInput2">Imagen</label>
                             <input type="text" class="form-control" id="imagen"
-                                placeholder="Ingrese un Nombre de Imagen">
+                                placeholder="Ingrese un nombre de imagen">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Trailer</label>
+                            <input type="text" class="form-control" id="trailer"
+                                placeholder="Ingrese el trailer">
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
