@@ -11,6 +11,7 @@ module.exports = {
       error:'./src/js/error.js',
       infoSeries:'./src/js/infoSeries.js',
       acercaDeNosotros:'./src/js/acercaDeNosotros.js',
+      Contacto:'./src/js/Contacto.js',
     },
   output: {
     filename: 'js/[name].js',
@@ -109,6 +110,20 @@ module.exports = {
       chunks:['infoSeries'],
       filename:'./infoSeries.html'
   }),
+  new HtmlWebpackPlugin({
+    template: './src/Contacto.html',
+    minify:{
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: true
+    },
+    inject:true,
+    chunks:['Contacto'],
+    filename:'./Contacto.html'
+}),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
     }),
