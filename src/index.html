@@ -17,44 +17,43 @@
 <body class="body-index">
     <header>
 
-        
-            <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top ">
-                <a class="navbar-brand d-flex" href="#">
-                    <i class="fas fa-video text-info m-2 fa-1x"></i>
-                    <p class="text-uppercase font-weight-bold text-light align-items-center">ROLLING-MOVIES</p>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <a type="button" class="btn btn-outline-info text-uppercase m-1 text-info"
-                            href="infoSeries.html">INFO</a>
-                        <a type="button" class="btn btn-outline-info text-uppercase m-1 text-info"
-                            href="admin.html">ADMIN</a>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-info text-info m-1"
-                                href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold"
-                                    href="#">FILMS</a>
-                                <a class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold"
-                                    href="#">SERIES</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR">
-                        <a class="btn btn-outline-info my-2 my-sm-0 text-info" type="submit">BUSCAR</a>
-                    </form>
-                </div>
-            </nav>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top ">
+            <a class="navbar-brand d-flex" href="index.html">
+                <i class="fas fa-video text-info m-2 fa-1x"></i>
+                <p class="text-uppercase font-weight-bold text-light align-items-center">ROLLING-MOVIES</p>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <a type="button" class="btn btn-outline-info text-uppercase m-1 text-info"
+                        href="infoSeries.html">INFO</a>
+                    <a type="button" class="btn btn-outline-info text-uppercase m-1 text-info"
+                        href="admin.html">ADMIN</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-info text-info m-1" href="#"
+                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold"
+                                href="#">FILMS</a>
+                            <a class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold"
+                                href="#">SERIES</a>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR">
+                    <a class="btn btn-outline-info my-2 my-sm-0 text-info" type="submit">BUSCAR</a>
+                </form>
+            </div>
+        </nav>
     </header>
     <!-- slider -->
     <div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel">
@@ -87,9 +86,9 @@
     <!-- cards -->
     <article class="text-center">
 
-        <H1 class="text-uppercase font-weight-bold my-3 bg-dark"><em>MOVIES</em></H1>
+        <H1 class="tituloh1 text-uppercase font-weight-bold my-3 bg-dark"><em>MOVIES</em></H1>
         <br>
-        <h3 class="text-uppercase font-weight-bold">Drama</h3>
+        <h3 class="tituloh3 text-uppercase font-weight-bold">Drama</h3>
 
     </article>
     <br>
@@ -146,8 +145,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </section>
 
     </main>
@@ -156,9 +155,9 @@
     <!-- categoria comedia -->
 
     <article class="text-center my-2">
-        <h3 class="text-uppercase font-weight-bold">Comedia</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold">Comedia</h3>
     </article>
-    
+
 
     <main class="container-fluid">
         <section class="row d-flex justify-content-center">
@@ -166,42 +165,55 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
 
         </section>
+
     </main>
     <br>
 
@@ -209,7 +221,7 @@
 
     <article class="text-center">
 
-        <h3 class="text-uppercase font-weight-bold my-3">Horror</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold my-3">Horror</h3>
 
     </article>
     <main class="container-fluid">
@@ -218,40 +230,53 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
@@ -261,7 +286,7 @@
 
     <article class="text-center">
 
-        <h3 class="text-uppercase font-weight-bold">Comedia</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold">Comedia</h3>
 
     </article>
     <main class="container-fluid">
@@ -270,40 +295,53 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
@@ -313,7 +351,7 @@
 
     <article class="text-center">
 
-        <h3 class="text-uppercase font-weight-bold">Documental</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold">Documental</h3>
 
     </article>
     <main class="container-fluid">
@@ -322,49 +360,62 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
 
     <!-- series -->
     <article class="text-center my-2">
-        <H1 class="text-uppercase font-weight-bold my-3 bg-dark"><em>SERIES</em></H1>
+        <H1 class=" tituloh1 text-uppercase font-weight-bold my-3 bg-dark"><em>SERIES</em></H1>
         <br>
-        <h3 class="text-uppercase font-weight-bold">Drama</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold">Drama</h3>
 
     </article>
     <br>
@@ -376,40 +427,53 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
@@ -419,7 +483,7 @@
 
     <article class="text-center">
 
-        <h3 class="text-uppercase font-weight-bold">Comedia</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold">Comedia</h3>
 
     </article>
     <main class="container-fluid">
@@ -428,40 +492,53 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
@@ -471,7 +548,7 @@
 
     <article class="text-center">
 
-        <h3 class="text-uppercase font-weight-bold">Horror</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold">Horror</h3>
 
     </article>
     <main class="container-fluid">
@@ -480,40 +557,53 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
@@ -521,9 +611,9 @@
 
     <!-- categoria comedia -->
 
-    <article class="text-center">
+    <article class=" tituloh1 text-center">
 
-        <h3 class="text-uppercase font-weight-bold">Comedia</h3>
+        <h3 class=" tituloh3 text-uppercase font-weight-bold">Comedia</h3>
 
     </article>
     <main class="container-fluid">
@@ -532,40 +622,53 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
@@ -575,7 +678,7 @@
 
     <article class="text-center">
 
-        <h3 class="text-uppercase font-weight-bold">Documental</h3>
+        <h3 class="tituloh3 text-uppercase font-weight-bold">Documental</h3>
 
     </article>
     <main class="container-fluid">
@@ -584,40 +687,53 @@
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card-deck col-sm-12 col-md-6 col-lg-3">
                 <div class="card">
                     <img src="img/dark.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="infoSeries.html"><i class="fas fa-fast-forward fa-2x"></i></a>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="infoSeries.html"><i class="fas fa-info fa-2x"></i></a>
+                            <a href="error.html"><i class="far fa-play-circle fa-2x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+
         </section>
 
     </main>
