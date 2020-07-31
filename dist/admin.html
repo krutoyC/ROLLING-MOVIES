@@ -1,1 +1,304 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rolling Movies</title><meta name="descripcion" content="pagina para disfrutar de tu SERIES y Pelicualas preferidas-Rolling Movies"><meta name="Autor" content="Rolling-Movies-Team"><meta name="keywords" content="SERIES,FILMS, PELICULAS, ESTRENOS, GRATIS-Rolling Movies"><meta name="copyright" content="Rolling-Movies-Team"><link rel="INCON" href="img/imagen de pelicula y series-icono.ico"><link href="css/style.css" rel="stylesheet"></head><body class="body-infoseries"><header><body class="pagina-principal" id="cuerpo-pagina"><nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"><a class="navbar-brand d-flex" href="index.html"><i class="fas fa-video text-info m-2 fa-1x"></i><p class="text-uppercase font-weight-bold text-light align-items-center">ROLLING-MOVIES</p></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><a type="button" class="btn btn-outline-info text-uppercase m-1 text-info" href="infoSeries.html">INFO</a> <a type="button" class="btn btn-outline-info text-uppercase m-1 text-info" href="admin.html">ADMIN</a><li class="nav-item dropdown"><a class="nav-link dropdown-toggle text-uppercase btn btn-outline-info text-info m-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold" href="#">FILMS</a> <a class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold" href="#">SERIES</a><div class="dropdown-divider"></div></div></li></ul><form class="form-inline my-2 my-lg-0"><input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR"> <a class="btn btn-outline-info my-2 my-sm-0 text-info" type="submit">BUSCAR</a></form></div></nav></body></header><main class="container mt-5"><section class="row"><div class="col-10"><h1 class="display-4 mt-5 ml-5">Administrar Series y Peliculas</h1></div><div class="col-2 mt-2"><img src="img/e263b9ef-9865-4486-a086-cf13231337cf_200x200-2.png" alt="..." class="w-100"></div></section><section><hr><article class="row my-4"><div class="col-10 text-center"><h3>Tabla de Series y Peliculas disponibles</h3></div><div class="col-2 text-right"><button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Agregar</button></div></article><article><table class="table"><thead class="thead-dark"><tr><th scope="col">Codigo</th><th scope="col">Nombre</th><th scope="col">Tipo</th><th scope="col">Categoria</th><th scope="col">Descripción</th><th scope="col">Publicado</th><th scope="col">Imagen</th><th scope="col">Trailer</th><th scope="col">Editar</th></tr><tr class="shadow-none p-3 mb-5 bg-secondary rounded text-light"><td scope="row">#3361</td><td>Zoolander</td><td>Pelicula</td><td>Comedia</td><td>Descripcion</td><td>Si</td><td>Imagen.png</td><td>Video.mp4</td><td><button class="btn btn-danger"><i class="fas fa-trash"></i></button> <button class="btn btn-primary">Modificar</button></td></tr></thead><tbody id="tablaPelis"></tbody></table></article></section></main>​<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header bg-danger"><h5 class="modal-title text-light" id="exampleModalLabel">Agregar una nueva Pelicula o Serie</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body bg-secondary text-light"><form onsubmit="agregarPelicula(event)"><div class="form-group"><label for="formGroupExampleInput">Codigo</label> <input class="form-control" id="codigo" placeholder="Ingrese un codigo" onblur="revisar()"></div><div class="form-group"><label for="formGroupExampleInput2">Nombre</label> <input class="form-control" id="nombre" placeholder="Ingrese el nombre de la pelicula o serie"></div><div class="form-group"><label for="formGroupExampleInput2">Tipo</label> <input class="form-control" id="tipo" placeholder="Serie o Pelicula"></div><div class="form-group"><label for="formGroupExampleInput2">Categoria</label> <input class="form-control" id="categoria" placeholder="Comedia, infantil, acción"></div><div class="form-group"><label for="formGroupExampleInput2">Descripcion</label> <input class="form-control" id="descripcion" placeholder="Ingrese una Descripcion"></div><div class="form-group"><label for="formGroupExampleInput2">Publicado</label> <input class="form-control" id="publicado" placeholder="Si o No"></div><div class="form-group"><label for="formGroupExampleInput2">Imagen</label> <input class="form-control" id="imagen" placeholder="Ingrese un nombre de imagen"></div><div class="form-group"><label for="formGroupExampleInput2">Trailer</label> <input class="form-control" id="trailer" placeholder="Ingrese el trailer"></div><button type="submit" class="btn btn-primary">Guardar</button></form></div><div class="modal-footer bg-dark"><button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button></div></div></div></div><br><div class="bg-light mt-3 d-flex justify-content-center"><a class="navbar-brand" href="index.html"><img src="img/Rolling-movies.png" height="100px" alt="logo" loading="lazy"></a></div><footer class="bg-dark text-light text-center p-2 mt-1" id="footer"><a href="https://github.com/"><i class="fab fa-github fa-2x"></i></a> <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter fa-2x"></i></a> <a href="https://www.facebook.com/"><i class="fab fa-facebook-f fa-2x"></i></a> <a href="https://gitlab.com/"><i class="fab fa-gitlab fa-2x"></i></a> <a class="navbar-brand" href="Contacto.html"><i class="far fa-id-card fa-2x"></i></a><p class="text-uppercase font-weight-bold text-light align-items-center">&copy; Todos los derechos reservados Rolling Movies Team</p><div class="d-flex justify-content-center"><a type="button" class="font-weight-bold btn btn-outline-info text-uppercase m-1 text-info bg-dark" href="acercaDeNosotros.html">ACERCA DE NOSOTROS</a></div></footer><script src="js/admin.js"></script></body></html>
+<<<<<<< HEAD <!doctype html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Rolling Movies</title>
+        <meta name="descripcion" content="pagina para disfrutar de tu SERIES y Pelicualas preferidas-Rolling Movies">
+        <meta name="Autor" content="Rolling-Movies-Team">
+        <meta name="keywords" content="SERIES,FILMS, PELICULAS, ESTRENOS, GRATIS-Rolling Movies">
+        <meta name="copyright" content="Rolling-Movies-Team">
+        <link rel="INCON" href="img/imagen de pelicula y series-icono.ico">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="body-infoseries">
+        <header>
+
+            <body class="pagina-principal" id="cuerpo-pagina">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"><a class="navbar-brand d-flex"
+                        href="index.html"><i class="fas fa-video text-info m-2 fa-1x"></i>
+                        <p class="text-uppercase font-weight-bold text-light align-items-center">ROLLING-MOVIES</p>
+                    </a><button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto"><a type="button"
+                                class="btn btn-outline-info text-uppercase m-1 text-info"
+                                href="infoSeries.html">INFO</a> <a type="button"
+                                class="btn btn-outline-info text-uppercase m-1 text-info" href="admin.html">ADMIN</a>
+                            <li class="nav-item dropdown"><a
+                                    class="nav-link dropdown-toggle text-uppercase btn btn-outline-info text-info m-1"
+                                    href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a
+                                        class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold"
+                                        href="#">FILMS</a> <a
+                                        class="dropdown-item text-uppercase btn btn-outline-info text-info m-1 font-weight-bold"
+                                        href="#">SERIES</a>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0"><input class="form-control mr-sm-2" type="BUSCAR"
+                                placeholder="BUSCAR" aria-label="BUSCAR"> <a
+                                class="btn btn-outline-info my-2 my-sm-0 text-info" type="submit">BUSCAR</a></form>
+                    </div>
+                </nav>
+            </body>
+        </header>
+        <main class="container mt-5">
+            <section class="row">
+                <div class="col-10">
+                    <h1 class="display-4 mt-5 ml-5">Administrar Series y Peliculas</h1>
+                </div>
+                <div class="col-2 mt-2"><img src="img/e263b9ef-9865-4486-a086-cf13231337cf_200x200-2.png" alt="..."
+                        class="w-100"></div>
+            </section>
+            <section>
+                <hr>
+                <article class="row my-4">
+                    <div class="col-10 text-center">
+                        <h3>Tabla de Series y Peliculas disponibles</h3>
+                    </div>
+                    <div class="col-2 text-right"><button class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#exampleModal">Agregar</button></div>
+                </article>
+                <article>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Publicado</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Trailer</th>
+                                <th scope="col">Editar</th>
+                            </tr>
+                            <tr class="shadow-none p-3 mb-5 bg-secondary rounded text-light">
+                                <td scope="row">#3361</td>
+                                <td>Zoolander</td>
+                                <td>Pelicula</td>
+                                <td>Comedia</td>
+                                <td>Descripcion</td>
+                                <td>Si</td>
+                                <td>Imagen.png</td>
+                                <td>Video.mp4</td>
+                                <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button> <button
+                                        class="btn btn-primary">Modificar</button></td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaPelis"></tbody>
+                    </table>
+                </article>
+            </section>
+        </main>​<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h5 class="modal-title text-light" id="exampleModalLabel">Agregar una nueva Pelicula o Serie
+                        </h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body bg-secondary text-light">
+                        <form onsubmit="agregarPelicula(event)">
+                            <div class="form-group"><label for="formGroupExampleInput">Codigo</label> <input
+                                    class="form-control" id="codigo" placeholder="Ingrese un codigo" onblur="revisar()">
+                            </div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Nombre</label> <input
+                                    class="form-control" id="nombre"
+                                    placeholder="Ingrese el nombre de la pelicula o serie"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Tipo</label> <input
+                                    class="form-control" id="tipo" placeholder="Serie o Pelicula"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Categoria</label> <input
+                                    class="form-control" id="categoria" placeholder="Comedia, infantil, acción"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Descripcion</label> <input
+                                    class="form-control" id="descripcion" placeholder="Ingrese una Descripcion"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Publicado</label> <input
+                                    class="form-control" id="publicado" placeholder="Si o No"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Imagen</label> <input
+                                    class="form-control" id="imagen" placeholder="Ingrese un nombre de imagen"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Trailer</label> <input
+                                    class="form-control" id="trailer" placeholder="Ingrese el trailer"></div><button
+                                type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer bg-dark"><button type="button" class="btn btn-danger"
+                            data-dismiss="modal">Cerrar</button></div>
+                </div>
+            </div>
+        </div><br>
+        <div class="bg-light mt-3 d-flex justify-content-center"><a class="navbar-brand" href="index.html"><img
+                    src="img/Rolling-movies.png" height="100px" alt="logo" loading="lazy"></a></div>
+        <footer class="bg-dark text-light text-center p-2 mt-1" id="footer"><a href="https://github.com/"><i
+                    class="fab fa-github fa-2x"></i></a> <a href="https://twitter.com/?lang=es"><i
+                    class="fab fa-twitter fa-2x"></i></a> <a href="https://www.facebook.com/"><i
+                    class="fab fa-facebook-f fa-2x"></i></a> <a href="https://gitlab.com/"><i
+                    class="fab fa-gitlab fa-2x"></i></a> <a class="navbar-brand" href="Contacto.html"><i
+                    class="far fa-id-card fa-2x"></i></a>
+            <p class="text-uppercase font-weight-bold text-light align-items-center">&copy; Todos los derechos
+                reservados Rolling Movies Team</p>
+            <div class="d-flex justify-content-center"><a type="button"
+                    class="font-weight-bold btn btn-outline-info text-uppercase m-1 text-info bg-dark"
+                    href="acercaDeNosotros.html">ACERCA DE NOSOTROS</a></div>
+        </footer>
+        <script src="js/admin.js"></script>
+    </body>
+
+    </html>
+    =======
+    <!doctype html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Rolling Movies - Admin</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed" id="navbar">
+                <div class="container"><a class="navbar-brand" href="index.html"><img src="img/Rolling-movies.png"
+                            height="100px" alt="logo" loading="lazy"> </a><button class="navbar-toggler" type="button"
+                        data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="admin.html">Administrar<span
+                                        class="sr-only">(current)</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Info</a></li>
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Ver Ahora</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"
+                                        href="#">Peliculas</a> <a class="dropdown-item" href="#">Series</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container">
+            <section class="row">
+                <div class="col-10">
+                    <h1 class="display-4 mt-5 ml-5">Administrar Series y Peliculas</h1>
+                </div>
+                <div class="col-2 mt-2"><img src="img/e263b9ef-9865-4486-a086-cf13231337cf_200x200-2.png" alt="..."
+                        class="w-100"></div>
+            </section>
+            <section>
+                <hr>
+                <article class="row my-4">
+                    <div class="col-10 text-center">
+                        <h3>Tabla de Series y Peliculas disponibles</h3>
+                    </div>
+                    <div class="col-2 text-right"><button class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#exampleModal">Agregar</button></div>
+                </article>
+                <article>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Trailer</th>
+                                <th scope="col">Publicado</th>
+                                <th scope="col">Editar</th>
+                            </tr>
+                            <tr class="shadow-none p-3 mb-5 bg-secondary rounded text-light">
+                                <td scope="row">#3361</td>
+                                <td>Zoolander</td>
+                                <td>Pelicula</td>
+                                <td>Comedia</td>
+                                <td>Descripcion</td>
+                                <td>Imagen.png</td>
+                                <td>Video.mp4</td>
+                                <td>Si</td>
+                                <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button> <button
+                                        class="btn btn-primary">Modificar</button></td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaPelis"></tbody>
+                    </table>
+                </article>
+            </section>
+        </main>​<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h5 class="modal-title text-light" id="exampleModalLabel">Agregar una nueva Pelicula o Serie
+                        </h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body bg-secondary text-light">
+                        <form onsubmit="agregarPelicula(event)">
+                            <div class="form-group"><label for="formGroupExampleInput">Codigo</label> <input
+                                    type="number" class="form-control" id="codigo"
+                                    placeholder="Ingrese un codigo numerico de cuatros digitos"
+                                    onblur="validarNumero(this)">
+                                <div class="invalid-feedback">Debe ingresar un codigo numerico de cuatros digitos</div>
+                                <div class="valid-feedback">Correcto</div>
+                            </div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Nombre</label> <input
+                                    class="form-control" id="nombre"
+                                    placeholder="Ingrese el nombre de la pelicula o serie" onblur="validarTexto(this)">
+                                <div class="invalid-feedback">Debe ingresar un nombre de pelicula o serie</div>
+                                <div class="valid-feedback">Correcto</div>
+                            </div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Tipo</label> <input
+                                    class="form-control" id="tipo" placeholder="Serie o Pelicula"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Categoria</label> <input
+                                    class="form-control" id="categoria" placeholder="Comedia, infantil, acción"
+                                    onblur="validarTexto(this)">
+                                <div class="invalid-feedback">Debe ingresar una categoria correcta</div>
+                                <div class="valid-feedback">Correcto</div>
+                            </div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Descripcion</label> <input
+                                    class="form-control" id="descripcion" placeholder="Ingrese una Descripcion"
+                                    onblur="validarDescripcion(this)">
+                                <div class="invalid-feedback">Debe ingresar una descripcion</div>
+                                <div class="valid-feedback">Correcto</div>
+                            </div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Imagen</label> <input
+                                    class="form-control" id="imagen" placeholder="Ingrese un nombre de imagen"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Trailer</label> <input
+                                    class="form-control" id="trailer" placeholder="Ingrese el trailer"></div>
+                            <div class="form-group"><label for="formGroupExampleInput2">Publicado</label><br>
+                                <div class="form-check form-check-inline"><input class="form-check-input" type="radio"
+                                        name="inlineRadioOptions" id="publicadoSi"> <label
+                                        class="form-check-label">Si</label> <input class="form-check-input" type="radio"
+                                        name="inlineRadioOptions" id="publicadoNo"> <label
+                                        class="form-check-label">No</label></div>
+                            </div><button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer bg-dark"><button type="button" class="btn btn-danger"
+                            data-dismiss="modal">Cerrar</button></div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-dark text-light text-center py-4 mt-5" id="footer">
+            <p>&copy; Todos los derechos reservados Rolling Movies Team</p><i class="fab fa-github"></i> <i
+                class="fab fa-twitter"></i> <i class="fab fa-facebook-f"></i> <i class="fab fa-gitlab"></i>
+        </footer>
+        <script src="js/admin.js"></script>
+    </body>
+
+    </html>
+    >>>>>>> logicaAdminT

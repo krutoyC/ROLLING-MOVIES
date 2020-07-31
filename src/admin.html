@@ -2,16 +2,10 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--AGREGAR ETIQUETAS META-->
-    <title>Rolling Movies</title>
-    <meta name="descripcion" content="pagina para disfrutar de tu SERIES y Pelicualas preferidas-Rolling Movies">
-    <meta name="Autor" content="Rolling-Movies-Team">
-    <meta name="keywords" content="SERIES,FILMS, PELICULAS, ESTRENOS, GRATIS-Rolling Movies">
-    <meta name="copyright" content="Rolling-Movies-Team" />
-    <link rel="INCON" href="img/imagen de pelicula y series-icono.ico">
-
+    <title>Rolling Movies - Admin</title>
 </head>
 
 <body class="body-infoseries">
@@ -63,17 +57,19 @@
                 <h1 class="display-4 mt-5 ml-5">Administrar Series y Peliculas</h1>
             </div>
             <div class="col-2 mt-2">
-                <img src="img/e263b9ef-9865-4486-a086-cf13231337cf_200x200-2.png" alt="..." class="w-100">
+                <img src="img/e263b9ef-9865-4486-a086-cf13231337cf_200x200-2.png" alt="..." class="w-100" />
             </div>
         </section>
         <section>
-            <hr>
+            <hr />
             <article class="row my-4">
                 <div class="col-10 text-center">
                     <h3>Tabla de Series y Peliculas disponibles</h3>
                 </div>
                 <div class="col-2 text-right">
-                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Agregar</button>
+                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                        Agregar
+                    </button>
                 </div>
             </article>
             <article>
@@ -85,29 +81,29 @@
                             <th scope="col">Tipo</th>
                             <th scope="col">Categoria</th>
                             <th scope="col">Descripción</th>
-                            <th scope="col">Publicado</th>
                             <th scope="col">Imagen</th>
                             <th scope="col">Trailer</th>
+                            <th scope="col">Publicado</th>
                             <th scope="col">Editar</th>
-
                         </tr>
                         <tr class="shadow-none p-3 mb-5 bg-secondary rounded text-light">
-                            <td scope="row"> #3361</td>
+                            <td scope="row">#3361</td>
                             <td>Zoolander</td>
                             <td>Pelicula</td>
                             <td>Comedia</td>
                             <td>Descripcion</td>
-                            <td>Si</td>
                             <td>Imagen.png</td>
                             <td>Video.mp4</td>
+                            <td>Si</td>
                             <td>
-                                <button class="btn btn-danger" ><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                                 <button class="btn btn-primary">Modificar</button>
                             </td>
                         </tr>
                     </thead>
-                    <tbody id="tablaPelis">
-                    </tbody>
+                    <tbody id="tablaPelis"></tbody>
                 </table>
             </article>
         </section>
@@ -119,55 +115,85 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-danger">
-                    <h5 class="modal-title text-light" id="exampleModalLabel">Agregar una nueva Pelicula o Serie</h5>
+                    <h5 class="modal-title text-light" id="exampleModalLabel">
+                        Agregar una nueva Pelicula o Serie
+                    </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body bg-secondary text-light">
-                    <form  onsubmit="agregarPelicula(event)">
+                    <form onsubmit="agregarPelicula(event)">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Codigo</label>
-                            <input type="text" class="form-control" id="codigo" placeholder="Ingrese un codigo" onblur="revisar()">
+                            <input type="number" class="form-control" id="codigo"
+                                placeholder="Ingrese un codigo numerico de cuatros digitos"
+                                onblur="validarNumero(this)" />
+                            <div class="invalid-feedback">
+                                Debe ingresar un codigo numerico de cuatros digitos
+                            </div>
+                            <div class="valid-feedback">Correcto</div>
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Nombre</label>
                             <input type="text" class="form-control" id="nombre"
-                                placeholder="Ingrese el nombre de la pelicula o serie">
+                                placeholder="Ingrese el nombre de la pelicula o serie" onblur="validarTexto(this)" />
+                            <div class="invalid-feedback">
+                                Debe ingresar un nombre de pelicula o serie
+                            </div>
+                            <div class="valid-feedback">Correcto</div>
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Tipo</label>
-                            <input type="text" class="form-control" id="tipo" placeholder="Serie o Pelicula">
+                            <input type="text" class="form-control" id="tipo" placeholder="Serie o Pelicula" />
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Categoria</label>
-                            <input type="text" class="form-control" id="categoria" placeholder="Comedia, infantil, acción">
+                            <input type="text" class="form-control" id="categoria"
+                                placeholder="Comedia, infantil, acción" onblur="validarTexto(this)" />
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoria correcta
+                            </div>
+                            <div class="valid-feedback">Correcto</div>
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Descripcion</label>
                             <input type="text" class="form-control" id="descripcion"
-                                placeholder="Ingrese una Descripcion">
+                                placeholder="Ingrese una Descripcion" onblur="validarDescripcion(this)" />
+                            <div class="invalid-feedback">
+                                Debe ingresar una descripcion
+                            </div>
+                            <div class="valid-feedback">Correcto</div>
                         </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Publicado</label>
-                            <input type="text" class="form-control" id="publicado"
-                                placeholder="Si o No">
-                        </div>
+
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Imagen</label>
                             <input type="text" class="form-control" id="imagen"
-                                placeholder="Ingrese un nombre de imagen">
+                                placeholder="Ingrese un nombre de imagen" />
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Trailer</label>
-                            <input type="text" class="form-control" id="trailer"
-                                placeholder="Ingrese el trailer">
+                            <input type="text" class="form-control" id="trailer" placeholder="Ingrese el trailer" />
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Publicado</label>
+                            <br />
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="publicadoSi" />
+                                <label class="form-check-label">Si</label>
+
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="publicadoNo" />
+                                <label class="form-check-label">No</label>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
                 <div class="modal-footer bg-dark">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        Cerrar
+                    </button>
                 </div>
             </div>
         </div>
