@@ -66,3 +66,4 @@ window.validarDescripcion = function (texto) {
         return false;
     }
 }
+
