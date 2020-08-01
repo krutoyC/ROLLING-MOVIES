@@ -22,6 +22,14 @@ window.agregarPelicula = function (event) {
     let duracion = document.getElementById('duracion').value;
     let imagen = document.getElementById('imagen').value;
     let trailer = document.getElementById('trailer').value;
+    let publicar;
+    let check = document.getElementById("publicar");
+    if (check.checked) {
+        publicar = true;
+    } else {
+        publicar = false;
+    }
+    console.log(publicar);
 
     // validar formulario
     if (validarNumero(document.getElementById('codigo')) &&
@@ -31,22 +39,22 @@ window.agregarPelicula = function (event) {
         validarDescripcion(document.getElementById('descripcion')) &&
         validarTexto(document.getElementById('actores')) &&
         validarTexto(document.getElementById('duracion'))) {
+        let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, trailer, publicar);
+        console.log(peliculaNueva);
+        //agregar objeto al arreglo
+        listaPeliculas.push(peliculaNueva);
+        //guardar en localStorage
+        localStorage.setItem('peliculaKey', JSON.stringify(listaPeliculas));
+        // mostrar arreglo
+        leerPeliculas();
+        // borrar formulario
+        limpiarFormulario();
+        // cerrar ventana modal
+        let ventanaModal = document.getElementById("agregarPelis");
+        $(ventanaModal).modal("hide");
     } else {
         alert("Hay un error en su formulario ");
     }
-    let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, trailer);
-    console.log(peliculaNueva);
-    //agregar objeto al arreglo
-    listaPeliculas.push(peliculaNueva);
-    //guardar en localStorage
-    localStorage.setItem('peliculaKey', JSON.stringify(listaPeliculas));
-    // mostrar arreglo
-    leerPeliculas();
-    // borrar formulario
-    limpiarFormulario();
-    // cerrar ventana modal
-    let ventanaModal = document.getElementById("agregarPelis");
-    $(ventanaModal).modal("hide");
 };
 
 // validación de los inputs
@@ -79,15 +87,14 @@ window.validarDescripcion = function (texto) {
     }
 }
 
-// function validarCheck() {
-//     if (check.checked) {
-//         check.className = "form-check-input is-valid";
-//         return true;
-//     } else {
-//         check.className = "form-check-input is-invalid";
-//         return false;
-//     }
-// }
+let check = document.getElementById("publicar")
+window.validarCheck = function () {
+    if (check.checked) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function leerPeliculas() {
     // pregunto si el localstorage tiene datos
@@ -95,6 +102,12 @@ function leerPeliculas() {
         let arregloLS = JSON.parse(localStorage.getItem("peliculaKey"));
         if (listaPeliculas.length == 0) {
             listaPeliculas = arregloLS;
+        }
+
+        for (let i in listaPeliculas) {
+            if (listaPeliculas[i].publicado) {
+                dibujarIndex(arregloLS);
+            }
         }
         // borramos filas de la lista
         borrarFilas();
@@ -121,6 +134,24 @@ function dibujarFilas(arregloLS) {
     }
 }
 
+function dibujarIndex(arregloLS) {
+    let catalogo = document.getElementById("catalogo");
+    for (let i in arregloLS) {
+        codHTML = `<tr>
+        <th scope="row">${arregloLS[i].codigo}</th>
+        <td>${arregloLS[i].nombre}</td>
+        <td>${arregloLS[i].tipo}</td>
+        <td>${arregloLS[i].categoria}</td>
+        <td>${arregloLS[i].descripcion}</td>
+        <td>${arregloLS[i].actores}</td>
+        <td>${arregloLS[i].duracion}</td>
+        <td class="d-flex"><button class="btn btn-outline-danger mr-1" onclick="eliminarProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
+                class="btn btn-outline-primary" onclick="prepararProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button></td>
+        </tr>`;
+        tabla.innerHTML += codHTML;
+    }
+}
+
 function borrarFilas() {
     let tabla = document.getElementById("tablaPelis");
     if (tabla.children.length != 0) {
@@ -130,7 +161,7 @@ function borrarFilas() {
     }
 }
 
-function limpiarFormulario() { // limpia todos los input del formulario
+window.limpiarFormulario = function () { // limpia todos los input del formulario
     let formulario = document.getElementById("formularioPeliculas");
     formulario.reset();
     document.getElementById('codigo').className = "form-control";

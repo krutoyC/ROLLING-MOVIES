@@ -1,14 +1,41 @@
 .body-index{
+    margin-top: 72px;
     background-color: #0C2D45;
 
 }
 
-.tituloh1{
-    color: aliceblue;
+.body-admin{
+    background-color: #FAFDFF;
+}
+
+.tituloh1, .card{
+    color: #FAFDFF;
+    background-color: #43474A;
 }
 
 .tituloh3{
     color: aliceblue;
     margin: 10px;
 }
+
+.modal-header{
+    background-color: #1279d6;
+}
+
+.btn-outline-primary{
+    color: #1279d6!important;
+    border-color: #1279d6!important;
+}
+
+.btn-outline-primary:hover{
+    color: #FAFDFF!important;
+    border-color: #1279d6!important;
+    background-color: #1279d6!important;
+}
+
+nav, footer{
+    color: #1279d6;
+    background-color: #43474A;
+}
+
 
