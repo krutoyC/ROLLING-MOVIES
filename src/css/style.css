@@ -39,7 +39,12 @@ nav, footer{
 }
 
 
-.body-infoseries{
-    background-color:#0000 ;
-    
+.titulo-informacion-series{
+    background-color: #1279D6!important;
+    color: #FAFDFF;
+  
+}
+
+.cuerpoinfoseries{
+    background-color: #000;
 }
