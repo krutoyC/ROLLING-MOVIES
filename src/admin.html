@@ -111,18 +111,28 @@
                         </div>
                         <div class="form-group">
                             <label>Tipo</label>
-                            <input type="text" class="form-control" id="tipo" placeholder="Serie o Pelicula" onblur="validarTexto(this)">
+                            <select class="form-control" id="tipo" onblur="validarOpcion(this)">
+                                <option></option>
+                                <option>Serie</option>
+                                <option>Película</option>
+                              </select>
                             <div class="invalid-feedback">
-                                Debe ingresar una categoría correcta
+                                Debe seleccionar un tipo
                             </div>
                             <div class="valid-feedback"></div>
                         </div>
                         <div class="form-group">
                             <label>Categoría</label>
-                            <input type="text" class="form-control" id="categoria"
-                                placeholder="Comedia, infantil, acción, drama" onblur="validarTexto(this)">
-                            <div class="invalid-feedback">
-                                Debe ingresar una categoría correcta
+                            <select class="form-control" id="categoria" onblur="validarOpcion(this)">
+                                <option></option>
+                                <option>Acción</option>
+                                <option>Comedia</option>
+                                <option>Drama</option>
+                                <option>Infantil</option>
+                                <option>Otra</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Debe seleccionar una categoría
                             </div>
                             <div class="valid-feedback"></div>
                         </div>

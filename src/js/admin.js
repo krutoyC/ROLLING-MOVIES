@@ -87,6 +87,17 @@ window.validarDescripcion = function (texto) {
     }
 }
 
+window.validarOpcion = function(opcion){
+    if(opcion.value != ""){
+        opcion.className = "form-control is-valid";
+        return true
+    }else{
+        opcion.className = "form-control is-invalid";
+        return false
+    }
+}
+
+// tomar valor del checkbox "publicar"
 let check = document.getElementById("publicar")
 window.validarCheck = function () {
     if (check.checked) {
