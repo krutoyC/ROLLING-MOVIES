@@ -114,16 +114,12 @@ function leerPeliculas() {
         if (listaPeliculas.length == 0) {
             listaPeliculas = arregloLS;
         }
-
-        for (let i in listaPeliculas) {
-            if (listaPeliculas[i].publicado) {
-                dibujarIndex(arregloLS);
-            }
-        }
         // borramos filas de la lista
         borrarFilas();
         // dibujar filas de la tabla
         dibujarFilas(arregloLS);
+        // dibujar en index
+        dibujarIndex(arregloLS);
     }
 }
 
@@ -146,21 +142,18 @@ function dibujarFilas(arregloLS) {
 }
 
 function dibujarIndex(arregloLS) {
-    let catalogo = document.getElementById("catalogo");
-    for (let i in arregloLS) {
-        codHTML = `<tr>
-        <th scope="row">${arregloLS[i].codigo}</th>
-        <td>${arregloLS[i].nombre}</td>
-        <td>${arregloLS[i].tipo}</td>
-        <td>${arregloLS[i].categoria}</td>
-        <td>${arregloLS[i].descripcion}</td>
-        <td>${arregloLS[i].actores}</td>
-        <td>${arregloLS[i].duracion}</td>
-        <td class="d-flex"><button class="btn btn-outline-danger mr-1" onclick="eliminarProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
-                class="btn btn-outline-primary" onclick="prepararProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button></td>
-        </tr>`;
-        tabla.innerHTML += codHTML;
-    }
+    
+    // // for (let i in arregloLS) {
+    // //     if(arregloLS[i].tipo == "Película"){
+    // //         codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
+    // //         <div class="card">
+    // //             <img src="img/${arregloLS[i].imagen}" class="card-img-top" alt="${arregloLS[i].nombre}">
+    // //             <h5 class="card-title text-center mt-2">${arregloLS[i].nombre}</h5>
+    // //         </div>
+    // //     </div>`
+    // //     // peliculas.innerHTML += codHTML;
+    // //     }
+
 }
 
 function borrarFilas() {
