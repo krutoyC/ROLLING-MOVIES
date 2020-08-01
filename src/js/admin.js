@@ -3,8 +3,11 @@ import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min.js'
 import '../css/style.css';
 import Pelicula from './pelicula.js'
+import $ from 'jquery';
 
 let listaPeliculas = [];
+let codHTML = "";
+leerPeliculas();
 
 window.agregarPelicula = function (event) {
     event.preventDefault();
@@ -15,30 +18,39 @@ window.agregarPelicula = function (event) {
     let tipo = document.getElementById('tipo').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
-    let publicado = document.getElementById('publicado').value;
+    let actores = document.getElementById('actores').value;
+    let duracion = document.getElementById('duracion').value;
     let imagen = document.getElementById('imagen').value;
     let trailer = document.getElementById('trailer').value;
 
-    //validar formulario
+    // validar formulario
     if (validarNumero(document.getElementById('codigo')) &&
         validarTexto(document.getElementById('nombre')) &&
         validarTexto(document.getElementById('categoria')) &&
-        validarDescripcion(document.getElementById('descripcion'))) {
-        alert("Su formulario esta correcto");
+        validarTexto(document.getElementById('tipo')) &&
+        validarDescripcion(document.getElementById('descripcion')) &&
+        validarTexto(document.getElementById('actores')) &&
+        validarTexto(document.getElementById('duracion'))) {
     } else {
         alert("Hay un error en su formulario ");
     }
-    let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, publicado, imagen, trailer);
+    let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, trailer);
     console.log(peliculaNueva);
     //agregar objeto al arreglo
     listaPeliculas.push(peliculaNueva);
     //guardar en localStorage
     localStorage.setItem('peliculaKey', JSON.stringify(listaPeliculas));
-
+    // mostrar arreglo
+    leerPeliculas();
+    // borrar formulario
+    limpiarFormulario();
+    // cerrar ventana modal
+    let ventanaModal = document.getElementById("agregarPelis");
+    $(ventanaModal).modal("hide");
 };
 
+// validación de los inputs
 window.validarTexto = function (input) {
-    console.log("ejecutando desde la funcion validar texto");
     if (input.value == "") {
         input.className = "form-control is-invalid";
         return false;
@@ -67,3 +79,66 @@ window.validarDescripcion = function (texto) {
     }
 }
 
+// function validarCheck() {
+//     if (check.checked) {
+//         check.className = "form-check-input is-valid";
+//         return true;
+//     } else {
+//         check.className = "form-check-input is-invalid";
+//         return false;
+//     }
+// }
+
+function leerPeliculas() {
+    // pregunto si el localstorage tiene datos
+    if (localStorage.length > 0) {
+        let arregloLS = JSON.parse(localStorage.getItem("peliculaKey"));
+        if (listaPeliculas.length == 0) {
+            listaPeliculas = arregloLS;
+        }
+        // borramos filas de la lista
+        borrarFilas();
+        // dibujar filas de la tabla
+        dibujarFilas(arregloLS);
+    }
+}
+
+function dibujarFilas(arregloLS) {
+    let tabla = document.getElementById("tablaPelis");
+    for (let i in arregloLS) {
+        codHTML = `<tr>
+        <th scope="row">${arregloLS[i].codigo}</th>
+        <td>${arregloLS[i].nombre}</td>
+        <td>${arregloLS[i].tipo}</td>
+        <td>${arregloLS[i].categoria}</td>
+        <td>${arregloLS[i].descripcion}</td>
+        <td>${arregloLS[i].actores}</td>
+        <td>${arregloLS[i].duracion}</td>
+        <td class="d-flex"><button class="btn btn-outline-danger mr-1" onclick="eliminarProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
+                class="btn btn-outline-primary" onclick="prepararProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button></td>
+        </tr>`;
+        tabla.innerHTML += codHTML;
+    }
+}
+
+function borrarFilas() {
+    let tabla = document.getElementById("tablaPelis");
+    if (tabla.children.length != 0) {
+        while (tabla.firstChild) {
+            tabla.removeChild(tabla.firstChild);
+        }
+    }
+}
+
+function limpiarFormulario() { // limpia todos los input del formulario
+    let formulario = document.getElementById("formularioPeliculas");
+    formulario.reset();
+    document.getElementById('codigo').className = "form-control";
+    document.getElementById('nombre').className = "form-control";
+    document.getElementById('tipo').className = "form-control";
+    document.getElementById('categoria').className = "form-control";
+    document.getElementById('descripcion').className = "form-control";
+    document.getElementById('actores').className = "form-control";
+    document.getElementById('duracion').className = "form-control";
+    // productoExistente = false;
+}

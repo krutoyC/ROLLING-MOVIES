@@ -67,7 +67,7 @@
                     <h3>Tabla de Series y Peliculas disponibles</h3>
                 </div>
                 <div class="col-2 text-right">
-                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#agregarPelis">
                         Agregar
                     </button>
                 </div>
@@ -76,31 +76,14 @@
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Codigo</th>
+                            <th scope="col">Código</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Tipo</th>
-                            <th scope="col">Categoria</th>
+                            <th scope="col">Categoría</th>
                             <th scope="col">Descripción</th>
-                            <th scope="col">Imagen</th>
-                            <th scope="col">Trailer</th>
-                            <th scope="col">Publicado</th>
+                            <th scope="col">Actores</th>
+                            <th scope="col">Duración</th>
                             <th scope="col">Editar</th>
-                        </tr>
-                        <tr class="shadow-none p-3 mb-5 bg-secondary rounded text-light">
-                            <td scope="row">#3361</td>
-                            <td>Zoolander</td>
-                            <td>Pelicula</td>
-                            <td>Comedia</td>
-                            <td>Descripcion</td>
-                            <td>Imagen.png</td>
-                            <td>Video.mp4</td>
-                            <td>Si</td>
-                            <td>
-                                <button class="btn btn-danger">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <button class="btn btn-primary">Modificar</button>
-                            </td>
                         </tr>
                     </thead>
                     <tbody id="tablaPelis"></tbody>
@@ -110,7 +93,7 @@
     </main>
     ​
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="agregarPelis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -123,68 +106,83 @@
                     </button>
                 </div>
                 <div class="modal-body bg-secondary text-light">
-                    <form onsubmit="agregarPelicula(event)">
+                    <form onsubmit="agregarPelicula(event)" id="formularioPeliculas">
                         <div class="form-group">
-                            <label for="formGroupExampleInput">Codigo</label>
+                            <label>Código</label>
                             <input type="number" class="form-control" id="codigo"
-                                placeholder="Ingrese un codigo numerico de cuatros digitos"
-                                onblur="validarNumero(this)" />
+                                placeholder="1234"
+                                onblur="validarNumero(this)">
                             <div class="invalid-feedback">
-                                Debe ingresar un codigo numerico de cuatros digitos
+                                Debe ingresar un código numérico de hasta cuatro dígitos
                             </div>
-                            <div class="valid-feedback">Correcto</div>
+                            <div class="valid-feedback"></div>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Nombre</label>
+                            <label>Nombre</label>
                             <input type="text" class="form-control" id="nombre"
-                                placeholder="Ingrese el nombre de la pelicula o serie" onblur="validarTexto(this)" />
+                                placeholder="Ingrese el nombre de la pelicula o serie" onblur="validarTexto(this)">
                             <div class="invalid-feedback">
-                                Debe ingresar un nombre de pelicula o serie
+                                Debe ingresar un nombre de película o serie
                             </div>
-                            <div class="valid-feedback">Correcto</div>
+                            <div class="valid-feedback"></div>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Tipo</label>
-                            <input type="text" class="form-control" id="tipo" placeholder="Serie o Pelicula" />
+                            <label>Tipo</label>
+                            <input type="text" class="form-control" id="tipo" placeholder="Serie o Pelicula" onblur="validarTexto(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoría correcta
+                            </div>
+                            <div class="valid-feedback"></div>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Categoria</label>
+                            <label>Categoría</label>
                             <input type="text" class="form-control" id="categoria"
-                                placeholder="Comedia, infantil, acción" onblur="validarTexto(this)" />
+                                placeholder="Comedia, infantil, acción, drama" onblur="validarTexto(this)">
                             <div class="invalid-feedback">
-                                Debe ingresar una categoria correcta
+                                Debe ingresar una categoría correcta
                             </div>
-                            <div class="valid-feedback">Correcto</div>
+                            <div class="valid-feedback"></div>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Descripcion</label>
+                            <label>Descripción</label>
                             <input type="text" class="form-control" id="descripcion"
-                                placeholder="Ingrese una Descripcion" onblur="validarDescripcion(this)" />
+                                placeholder="Ingrese una Descripcion" onblur="validarDescripcion(this)">
                             <div class="invalid-feedback">
-                                Debe ingresar una descripcion
+                                Debe ingresar una descripción
                             </div>
-                            <div class="valid-feedback">Correcto</div>
+                            <div class="valid-feedback"></div>
                         </div>
-
+                        <div class="form-group">
+                            <label>Actores Principales</label>
+                            <input type="text" class="form-control" id="actores"
+                                placeholder="Keanu Reeves, Laurence Fishburne, etc." onblur="validarTexto(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar los actores principales
+                            </div>
+                            <div class="valid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Duración</label>
+                            <input type="text" class="form-control" id="duracion"
+                                placeholder="ejemplo: 2h 35min (si es serie poner el aproximado)" onblur="validarTexto(this)">
+                            <div class="invalid-feedback">
+                                Debe ingresar los actores principales
+                            </div>
+                            <div class="valid-feedback"></div>
+                        </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Imagen</label>
                             <input type="text" class="form-control" id="imagen"
-                                placeholder="Ingrese un nombre de imagen" />
+                                placeholder="Ingrese un nombre de imagen">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Trailer</label>
-                            <input type="text" class="form-control" id="trailer" placeholder="Ingrese el trailer" />
+                            <input type="text" class="form-control" id="trailer" placeholder="Ingrese el trailer">
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Publicado</label>
-                            <br />
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="publicadoSi" />
-                                <label class="form-check-label">Si</label>
-
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="publicadoNo" />
-                                <label class="form-check-label">No</label>
+                            <label>Publicar? </label>
+                            <div class="form-check form-check-inline ml-2">
+                                <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="publicadoSi">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
