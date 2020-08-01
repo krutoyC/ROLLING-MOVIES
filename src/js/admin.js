@@ -15,20 +15,13 @@ window.agregarPelicula = function (event) {
     let tipo = document.getElementById('tipo').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
-    let publicado = document.getElementById('publicado').value;
     let imagen = document.getElementById('imagen').value;
     let trailer = document.getElementById('trailer').value;
+    let publicado = document.getElementById('publicado').value;
 
     //validar formulario
-    if (validarNumero(document.getElementById('codigo')) &&
-        validarTexto(document.getElementById('nombre')) &&
-        validarTexto(document.getElementById('categoria')) &&
-        validarDescripcion(document.getElementById('descripcion'))) {
-        alert("Su formulario esta correcto");
-    } else {
-        alert("Hay un error en su formulario ");
-    }
-    let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, publicado, imagen, trailer);
+   
+    let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, imagen, trailer, publicado);
     console.log(peliculaNueva);
     //agregar objeto al arreglo
     listaPeliculas.push(peliculaNueva);
