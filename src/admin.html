@@ -74,17 +74,16 @@
             </article>
         </section>
     </main>
-    ​
+
     <!-- Modal -->
-    <div class="modal fade" id="agregarPelis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="agregarPelis" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title text-light" id="exampleModalLabel">
                         Agregar una nueva Pelicula o Serie
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiarFormulario()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
