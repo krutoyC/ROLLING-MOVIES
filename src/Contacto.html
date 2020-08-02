@@ -11,7 +11,12 @@
     <meta name="keywords" content="SERIES,FILMS, PELICULAS, ESTRENOS, GRATIS-Rolling Movies">
     <meta name="copyright" content="Rolling-Movies-Team" />
     <link rel="INCON" href="img/imagen de pelicula y series-icono.ico">
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_GtdzRYBQ7aAiGuWDLDqTZ");
+        })();
+    </script>
 </head>
 
 <body class="body-index">
@@ -37,19 +42,20 @@
             </div>
         </nav>
     </header>
+
     <section class="container d-flex justify-content-center mt-5">
 
         <form class=" formulario col-sm-12 col-md-6 col-lg-6 m-3 p-3" onsubmit="validartodo(event)">
             <h1 class="font-weight-bold text-light text-center">Bienvenid@s</h1>
             <div class="form-group">
                 <label for="Nombre" class="text-light">Nombre completo</label>
-                <input type="text" class="form-control" id="nombre" required
-                    placeholder="Rolling Movies Team" onblur="revisar()">
+                <input type="text" class="form-control" id="nombre" required placeholder="Rolling Movies Team"
+                    onblur="revisar()">
                 <small id="textoMuteNombre" class="form-text text-muted">Tu nombre por favor</small>
                 <div class="invalid-feedback">Debes completar el formulario
 
                 </div>
-                <div class="valid-feedback">Gracias 
+                <div class="valid-feedback">Gracias
 
                 </div>
             </div>
@@ -66,8 +72,8 @@
 
             <div class="form-group">
                 <label class="text-light">Ingresa tu Consulta</label>
-                <textarea class="form-control" id="textArea" rows="5" placeholder="ingrese su consulta"
-                    required onblur="revisartextarea()"></textarea>
+                <textarea class="form-control" id="textArea" rows="5" placeholder="ingrese su consulta" required
+                    onblur="revisartextarea()"></textarea>
                 <div class="invalid-feedback">Debes completar el formulario</div>
                 <div class="valid-feedback">Gracias por tu consulta</div>
             </div>
@@ -76,10 +82,12 @@
                 <input type="checkbox" class="form-check-input" id="aceptarTerminos">
                 <label class="form-check-label text-light">LISTO</label>
                 <div class="invalid-feedback">Debes completar el formulario</div>
-                <div class="valid-feedback">Gracias por tu consulta</div>
+                <div class="valid-feedback"></div>
             </div>
             <button type="submit" class="btn btn-primary mb-3">ENVIAR</button>
+            <div class="alert alert-primary my-3 d-none" role="alert" id="envio"></div>
         </form>
+
     </section>
     <div class="bg-light mt-3 d-flex justify-content-center ">
         <a class="navbar-brand" href="index.html">
@@ -87,6 +95,7 @@
         </a>
 
     </div>
+
 
     <footer class="bg-dark text-light text-center p-2 mt-1" id="footer">
         <a href="https://github.com/"><i class="fab fa-github fa-2x"></i></a>
