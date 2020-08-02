@@ -10,8 +10,17 @@
 }
 
 .body-admin{
-    background-color: #FAFDFF;
+    background-color:#0C2D45;
 }
+
+.body-admin h1{
+  color: aliceblue;
+}
+
+.body-admin h3{
+    color: aliceblue;
+}
+
 
 .tituloh1, .card{
     color: #FAFDFF;
@@ -63,4 +72,8 @@ background-image: linear-gradient(0deg, #1d437a 0%, #0c97a1 74%);}
 
 .icoLinkI:hover {
 -webkit-transform:scale(1.25);
+}
+
+.modal-header{
+    background-color: #0C2D45;
 }
