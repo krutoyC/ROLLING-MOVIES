@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rolling Movies - Registro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Movies</title>
+    <link rel="ICON" href="img/logo-rolling-final.png">
+
 </head>
-<body>
-  <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </div>
+
+<body class="body-index">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand d-flex" href="index.html">
+                <img src="img/logo-rolling-final.png" alt="logo rolling movies" width="180px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="index.html">INICIO</a>
+                    <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="admin.html">ADMIN</a>
+                    <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="registro.html">REGISTRATE</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-primary m-1" href="#"
+                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Qué buscás?
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                href="#pelis">PELIS</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                href="#series">SERIES</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR">
+                    <a class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+
+    <footer class="bg-dark text-light text-center p-3 mt-2" id="footer">
+      <a href="https://github.com/" class="mx-3"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://twitter.com/?lang=es" class="m-3"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="https://www.facebook.com/" class="m-3"><i class="fab fa-facebook-f fa-2x"></i></a>
+      <a href="https://gitlab.com/" class="m-3"><i class="fab fa-gitlab fa-2x"></i></a>
+      </a>
+      <div class="d-flex justify-content-center my-2">
+          <a type="button" class="font-weight-bold btn btn-outline-primary text-uppercase m-1"
+              href="acercaDeNosotros.html">ACERCA DE NOSOTROS</a>
+          <a href="Contacto.html" type="button" class="font-weight-bold btn btn-outline-primary text-uppercase m-1">CONTACTATE CON NOSOTROS</a>
+          </div>
+      <p class="text-uppercase font-weight-bold text-light align-items-center">&copy; Todos los derechos reservados - Rolling Movies Team</p>
+  </footer>
 </body>
+
 </html>
