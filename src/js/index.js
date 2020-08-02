@@ -17,7 +17,7 @@ function leerProductos() {
                     let catalogoPeliculas = document.getElementById("catalogoPeliculas");
                     console.log("catálogo " + catalogoPeliculas)
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <div class="card">
+                    <div class="card cardGrow">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div>
@@ -27,7 +27,7 @@ function leerProductos() {
                     let catalogoSeries = document.getElementById("catalogoSeries");
                     console.log("catálogo " + catalogoSeries)
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <div class="card">
+                    <div class="card cardGrow">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div>
@@ -39,7 +39,7 @@ function leerProductos() {
                     let catalogoSeries = document.getElementById("catalogoAccion");
                     console.log("catálogo " + catalogoSeries)
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <div class="card">
+                    <div class="card cardGrow">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div>
@@ -50,7 +50,7 @@ function leerProductos() {
                         catalogoSeries = document.getElementById("catalogoComedia");
                     console.log("catálogo " + catalogoSeries)
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <div class="card">
+                    <div class="card cardGrow">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div>
@@ -61,7 +61,7 @@ function leerProductos() {
                         catalogoSeries = document.getElementById("catalogoDrama");
                     console.log("catálogo " + catalogoSeries)
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <div class="card">
+                    <div class="card cardGrow">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div>
@@ -72,7 +72,7 @@ function leerProductos() {
                         catalogoSeries = document.getElementById("catalogoInfantil");
                     console.log("catálogo " + catalogoSeries)
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <div class="card">
+                    <div class="card cardGrow">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div>

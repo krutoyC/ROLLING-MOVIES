@@ -42,9 +42,13 @@ nav, footer{
 .titulo-informacion-series{
     background-color: #1279D6!important;
     color: #FAFDFF;
-  
+    border-radius: 5px;
 }
 
 .cuerpoinfoseries{
     background-color: #0C2D45;
 }
+
+
+.cardGrow { transition: all .2s ease-in-out; }
+.cardGrow:hover { transform: scale(1.1); }
