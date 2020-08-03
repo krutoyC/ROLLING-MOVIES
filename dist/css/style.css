@@ -69,8 +69,8 @@ nav, footer{
     background-color: #0C2D45;
 }
 
-.formulario{
-    background-color: #43474A;
+.formulario, .bg-dark{
+    background-color: #43474A!important;
 }
 
 .imagen{
