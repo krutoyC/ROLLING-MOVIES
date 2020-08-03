@@ -1,22 +1,79 @@
-#cuerpo-pagina{
+.body-index{
+    margin-top: 72px;
     background-color: #0C2D45;
 
 }
 
-h1{
+.body-acercaDeNostros{
+    margin-top: 72px;
+    background-color: #0C2D45;
+}
+
+.body-admin{
+    background-color:#0C2D45;
+}
+
+.body-admin h1{
+  color: aliceblue;
+}
+
+.body-admin h3{
     color: aliceblue;
 }
 
-h3{
+
+.tituloh1, .card{
+    color: #FAFDFF;
+    background-color: #43474A;
+}
+
+.tituloh3{
     color: aliceblue;
     margin: 10px;
 }
 
-
-#navbar{
-    background-color: #1279D6 !important;
+.modal-header{
+    background-color: #1279d6;
 }
 
-#footer{
-    background-color: #1279D6 !important;
+.btn-outline-primary{
+    color: #1279d6!important;
+    border-color: #1279d6!important;
+}
+
+.btn-outline-primary:hover{
+    color: #FAFDFF!important;
+    border-color: #1279d6!important;
+    background-color: #1279d6!important;
+}
+
+nav, footer{
+    color: #1279d6;
+    background-color: #43474A;
+}
+
+
+.titulo-informacion-series{
+    background-color: #1279D6!important;
+    color: #FAFDFF;
+  
+}
+
+.cuerpoinfoseries{
+    background-color: #0C2D45;
+}
+
+.section-acercaDeNos{
+    color: aliceblue;}
+
+.card-acercaDeNos{
+    background-color: #36096d;
+background-image: linear-gradient(0deg, #1d437a 0%, #0c97a1 74%);}
+
+.icoLinkI:hover {
+-webkit-transform:scale(1.25);
+}
+
+.modal-header{
+    background-color: #0C2D45;
 }
