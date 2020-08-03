@@ -70,7 +70,7 @@ function enviarMail() {
     };
 
     let service_id = "default_service";
-    let template_id = "template_P80i089q";
+    let template_id = "rolling";
     emailjs.send(service_id, template_id, template_params).then(
         function(response){
             console.log("Respuesta cuando se envio correctament" + response);
