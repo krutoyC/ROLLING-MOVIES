@@ -84,6 +84,7 @@ function enviarEmail() {
         console.log("se envio correctamente"+response);
         document.getElementById("envio").className="alert alert-primary my-4";
 document.getElementById("envio").innerText="Su consulta fué enviada de forma correcta";
+limpiarConsulta();
     },function (error){
         console.log("fallo en el envio"+error);
         ocument.getElementById("envio").className="alert alert-danger my-4";
@@ -93,29 +94,10 @@ document.getElementById("envio").innerText="Falló en el envio";
 }
 
 
-// function enviarEmail(){
-//     let template_params = {
-        
-//         from_name: document.getElementById("nombre").value,
-        
-//         message_html: `Mensaje: ${document.getElementById("textArea").value} - Email: ${document.getElementById("email").value}`
-// //      };
-//      }
-     
-//      let service_id = "default_service";
-//      let template_id = "template_UMDsDNDO";
-//      emailjs.send(service_id, template_id, template_params).then(
-//          function(response){
-//              console.log("se envio correctamente"+response);
-//              document.getElementById("envio").className="alert alert-primary my-4";
-// document.getElementById("envio").innerText="Su consulta fué enviada de forma correcta";
-//          },function (error){
-//              console.log("fallo en el envio"+error);
-//              ocument.getElementById("envio").className="alert alert-danger my-4";
-// document.getElementById("envio").innerText="Falló en el envio";
-//          }
-             
-         
-//      )
-// }
+function limpiarConsulta() {
+    let formulario = document.getElementById("formularioConsulta");
+
+    formulario.reset();
+    
+}
 
