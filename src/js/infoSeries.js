@@ -26,9 +26,9 @@ function dibujarInfo(arregloLS) {
     let infoSeries = document.getElementById("informacion");
     for (let i in arregloLS) {
         codHTML = `<article class="d-none" id="${listaPeliculas[i].codigo}">
-                <div class="card my-5 mx-auto">
+                <div class="card my-5 mx-auto" style="max-width: none;">
                     <div class="row no-gutters">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-6 bg-dark">
                             <img src="img/${listaPeliculas[i].imagen}" class="card-img" alt="poster ${listaPeliculas[i].nombre}">
                         </div>
                         <div

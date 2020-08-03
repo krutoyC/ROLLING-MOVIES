@@ -9,22 +9,11 @@
     background-color: #0C2D45;
 }
 
-/* .body-admin{
-    background-color:#0C2D45;
-} */
-/* 
-.body-admin h1{
-  color: aliceblue;
-}
 
-.body-admin h3{
-    color: aliceblue;
-} */
-
-
-.tituloh1, .card{
+.tituloh1{
     color: #FAFDFF;
-    background-color: #43474A;
+    background: rgb(34,35,36);
+background: linear-gradient(90deg, rgba(34,35,36,1) 0%, rgba(67,71,74,1) 77%, rgba(92,102,108,1) 100%);
 }
 
 .tituloh3{
@@ -47,9 +36,19 @@
     background-color: #1279d6!important;
 }
 
-nav, footer{
+.card{
+    
+    background-color: #43474A!important;
+}
+
+nav{
+    background: rgb(34,35,36);
+background: linear-gradient(180deg, rgba(34,35,36,1) 0%, rgba(67,71,74,1) 77%, rgba(92,102,108,1) 100%);
+} 
+footer{
     color: #1279d6;
-    background-color: #43474A;
+    background: rgb(34,35,36);
+background: linear-gradient(0deg, rgba(34,35,36,1) 0%, rgba(67,71,74,1) 85%, rgba(92,102,108,1) 100%);
 }
 
 
