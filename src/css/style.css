@@ -9,17 +9,17 @@
     background-color: #0C2D45;
 }
 
-.body-admin{
+/* .body-admin{
     background-color:#0C2D45;
-}
-
+} */
+/* 
 .body-admin h1{
   color: aliceblue;
 }
 
 .body-admin h3{
     color: aliceblue;
-}
+} */
 
 
 .tituloh1, .card{
@@ -56,13 +56,16 @@ nav, footer{
 .titulo-informacion-series{
     background-color: #1279D6!important;
     color: #FAFDFF;
-  
+    border-radius: 5px;
 }
 
 .cuerpoinfoseries{
     background-color: #0C2D45;
 }
 
+
+.cardGrow { transition: all .2s ease-in-out; }
+.cardGrow:hover { transform: scale(1.1); }
 .section-acercaDeNos{
     color: aliceblue;}
 
@@ -70,9 +73,7 @@ nav, footer{
     background-color: #36096d;
 background-image: linear-gradient(0deg, #1d437a 0%, #0c97a1 74%);}
 
-.icoLinkI:hover {
--webkit-transform:scale(1.25);
-}
+
 
 .modal-header{
     background-color: #0C2D45;
