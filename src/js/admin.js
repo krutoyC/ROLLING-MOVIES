@@ -8,6 +8,7 @@ import $ from 'jquery';
 let listaPeliculas = [];
 let codHTML = "";
 leerPeliculas();
+let peliculaExistente = false;
 
 window.agregarPelicula = function (event) {
     event.preventDefault();
@@ -132,9 +133,9 @@ function dibujarFilas(arregloLS) {
         <td>${arregloLS[i].descripcion}</td>
         <td>${arregloLS[i].actores}</td>
         <td>${arregloLS[i].duracion}</td>
-        <td class="d-flex"><button class="btn btn-outline-danger mr-1" onclick="eliminarProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
-                class="btn btn-outline-primary" onclick="prepararProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-outline-warning ml-1" onclick="destacadoProducto" data-toggle="tooltip" data-placement="top" title="destacado"><i class="fas fa-star"></i></button></td>
+        <td class="d-flex"><button class="btn btn-outline-danger mr-1" onclick="eliminarPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
+                class="btn btn-outline-primary" onclick="prepararPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-outline-warning ml-1" onclick="destacadoProducto()" data-toggle="tooltip" data-placement="top" title="destacado"><i class="fas fa-star"></i></button></td>
         </tr>`;
         tabla.innerHTML += codHTML;
     }
@@ -160,5 +161,93 @@ window.limpiarFormulario = function () { // limpia todos los input del formulari
     document.getElementById('descripcion').className = "form-control";
     document.getElementById('actores').className = "form-control";
     document.getElementById('duracion').className = "form-control";
-    // productoExistente = false;
+    document.getElementById('imagen').className = "form-control";
+    document.getElementById('trailer').className = "form-control";
+    peliculaExistente = false;
+}
+
+window.eliminarPelicula = function(codigo){
+    console.log(codigo);
+    let arregloFiltrado = listaPeliculas.filter(function(pelicula){
+		return pelicula.codigo != codigo;
+    });
+    	//actualizar el localstorage
+	console.log(arregloFiltrado);
+	localStorage.setItem("peliculaKey",JSON.stringify(arregloFiltrado));
+	listaPeliculas = arregloFiltrado;
+	//volver a dibujar la tabla
+	leerPeliculas();
+}
+
+window.prepararPelicula = function(codigo){
+	console.log("hola");
+	
+	let objetoEncontrado = listaPeliculas.find(function(pelicula){
+        return pelicula.codigo == codigo;
+	})
+
+	console.log(objetoEncontrado);
+
+	//en el formulario, en cada input mostrar la propiedad del objeto encontrado
+	document.getElementById('codigo').value = objetoEncontrado.codigo;
+	document.getElementById('nombre').value = objetoEncontrado.nombre;
+	document.getElementById('tipo').value = objetoEncontrado.tipo;
+	document.getElementById('categoria').value = objetoEncontrado.categoria;
+	document.getElementById('descripcion').value = objetoEncontrado.descripcion;
+    document.getElementById('actores').value = objetoEncontrado.actores;
+    document.getElementById('duracion').value = objetoEncontrado.duracion;
+    document.getElementById('imagen').value = objetoEncontrado.imagen;
+    document.getElementById('trailer').value = objetoEncontrado.trailer;
+    // document.getElementById('publicado').value = objetoEncontrado.publicado;
+	//mostrar ventana modal
+    let ventanaModal = document.getElementById("agregarPelis");
+    $(ventanaModal).modal("show");
+    peliculaExistente = true;
+}
+
+window.decidir = function(event){
+	event.preventDefault();
+	if(peliculaExistente == false){
+		agregarPelicula();
+	}else{
+		modificarPelicula();
+	}
+}
+
+function modificarPelicula(){
+    console.log("modificando producto")
+    // tomar los nuevos valores de los input
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.getElementById('nombre').value;
+    let tipo = document.getElementById('tipo').value;
+    let categoria = document.getElementById('categoria').value;
+    let descripcion = document.getElementById('descripcion').value;
+    let actores = document.getElementById('actores').value;
+    let imagen = document.getElementById('imagen').value;
+    let trailer = document.getElementById('trailer').value;
+    let publicado = document.getElementById('publicado').value;
+    
+    // buscar el producto que estoy modificando en el arreglo y le cambio los valores
+    for(let i in listaPeliculas){
+        if(listaPeliculas[i].codigo == codigo){
+            // encontré el código > reemplazo valores
+            listaPeliculas[i].nombre = nombre;
+            listaPeliculas[i].tipo = tipo;
+            listaPeliculas[i].categoria = categoria;
+            listaPeliculas[i].descripcion = descripcion;
+            listaPeliculas[i].actores = actores;
+            listaPeliculas[i].duracion = duracion;
+            listaPeliculas[i].imagen = imagen;
+            listaPeliculas[i].trailer = trailer;
+            listaPeliculas[i].publicado = publicado;
+        }
+    }
+    // actualizar el LS
+    localStorage.setItem("peliculaKey", JSON.stringify(listaPeliculas));
+    // volver a dibujar la tabla
+    leerPeliculas();
+    limpiarFormulario();
+    // cerrar ventana modal
+    let ventanaModal = document.getElementById("agregarPeli");
+    $(ventanaModal).modal("hide");
 }
