@@ -25,52 +25,48 @@ function leerInfo() {
 function dibujarInfo(arregloLS) {
     let infoSeries = document.getElementById("informacion");
     for (let i in arregloLS) {
-        codHTML = `<article class="container-fluid d-flex justify-content-center" id="${listaPeliculas[i].codigo}>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand align-middle" href="index.html" onclick="">
-                    <i class="far fa-arrow-alt-circle-left fa-2x text-primary"></i>
-                    <p class="text-uppercase font-weight-bold text-light ml-3 mt-1">VOLVER AL CATALOGO</p>
-                </a>
-            </nav>
-            <div class="mt-5">
-                <div class="card my-5" style="max-width: 1000px;">
+        codHTML = `<article class="d-none" id="${listaPeliculas[i].codigo}">
+                <div class="card my-5 mx-auto">
                     <div class="row no-gutters">
                         <div class="col-sm-12 col-md-6">
                             <img src="img/${listaPeliculas[i].imagen}" class="card-img" alt="poster ${listaPeliculas[i].nombre}">
                         </div>
                         <div
-                            class="col-sm-12 col-md-6 bg-dark text-light d-flex justify-content-center align-items-center">
+                            class="col-sm-12 col-md-6 bg-dark text-light d-flex justify-content-center">
                             <div class="card-body bg-dark">
                                 <div class="titulo-informacion-series">
                                     <span
                                         class="d-block p-2 mb-3 bg-primary text-white text-center titulo-informacion-series">Conoce
                                         más de tus programas favoritos</span>
                                 </div>
-                                <h5 class="card-title font-weight-bold text-light text-center mt-2">${listaPeliculas[i].nombre}</h5>
+                                <h2 class="card-title text-uppercase font-weight-bold text-light text-center mt-2"><em>${listaPeliculas[i].nombre}</em></h2>
                                 <br>
                                 <p class="card-text text-justify"><strong>DESCRIPCIÓN: </strong>${listaPeliculas[i].descripcion}</p>
                                 <p><strong>ACTORES: </strong>${listaPeliculas[i].actores}
                                 </p>
                                 <p><strong>CATEGORÍA: </strong>${listaPeliculas[i].categoria}</p>
                                 <p><strong>DURACIÓN: </strong>${listaPeliculas[i].duracion}</p>
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <a href="error.html">
+                                <div class="d-flex justify-content-center align-items-center">
+                                <a href="index.html" class="mx-5" data-toggle="tooltip" data-placement="top" title="VOLVER AL CATALOGO"><i class="far fa-arrow-alt-circle-left fa-5x"></i></a>
+                                    <a href="error.html" class="mx-5" data-toggle="tooltip" data-placement="top" title="REPRODUCIR">
                                         <i class="far fa-play-circle fa-5x"></i>
                                     </a>
                                 </div>
                                 <p class="mt-3"><strong>TRAILER: </strong></p>
-                                ${listaPeliculas[i].trailer}
+                                <div width="450" height="300">${listaPeliculas[i].trailer}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </article>`
         infoSeries.innerHTML += codHTML;
     }
 }
 
-
-
+window.mostrarInfo = function(){
+    let serieBuscada = window.location.search.split("=")[1]
+    console.log(serieBuscada)
+    document.getElementById(serieBuscada).className ="row justify-content-center"; 
+}
 
 

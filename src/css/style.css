@@ -63,6 +63,13 @@ nav, footer{
     background-color: #0C2D45;
 }
 
+.formulario, .bg-dark{
+    background-color: #43474A!important;
+}
+
+.imagen{
+    max-width: 100%;
+}
 .icoLinkI:hover{
     transform: scale(1.3);
 }
