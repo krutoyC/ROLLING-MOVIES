@@ -12,6 +12,7 @@ module.exports = {
       infoSeries:'./src/js/infoSeries.js',
       acercaDeNosotros:'./src/js/acercaDeNosotros.js',
       Contacto:'./src/js/Contacto.js',
+      registro: './src/js/registro.js'
     },
   output: {
     filename: 'js/[name].js',
@@ -123,6 +124,20 @@ module.exports = {
     inject:true,
     chunks:['Contacto'],
     filename:'./Contacto.html'
+}),
+new HtmlWebpackPlugin({
+  template: './src/registro.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject:true,
+  chunks:['registro'],
+  filename:'./registro.html'
 }),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
