@@ -133,7 +133,8 @@ function dibujarFilas(arregloLS) {
         <td>${arregloLS[i].actores}</td>
         <td>${arregloLS[i].duracion}</td>
         <td class="d-flex"><button class="btn btn-outline-danger mr-1" onclick="eliminarProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
-                class="btn btn-outline-primary" onclick="prepararProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button></td>
+                class="btn btn-outline-primary" onclick="prepararProducto(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-outline-warning ml-1" onclick="destacadoProducto" data-toggle="tooltip" data-placement="top" title="destacado"><i class="fas fa-star"></i></button></td>
         </tr>`;
         tabla.innerHTML += codHTML;
     }
