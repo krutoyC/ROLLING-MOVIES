@@ -48,8 +48,8 @@ window.validarCheck = function () {
 
 checkTerminos.addEventListener("change", validarCheck);
 
-function validarForm(event)  {
-    //con esta linea prevengo que se actualice la pagina del boton sumit
+
+window.validarForm = function (event) {
     event.preventDefault();
     console.log("Desde Validar Form");
 
@@ -63,20 +63,18 @@ function validarForm(event)  {
     }
 }
 
-function enviarMail(){
+function enviarMail() {
     let template_params = {
         "from_name": document.getElementById("nombre").value,
-        "message_html": `Email ${document.getElementById(`email`).value} -
-        Contraseña: ${document.getElementById(`contraseña`).value}`
+        "message_html": `Email: ${document.getElementById(`email`).value} - Contraseña: ${document.getElementById(`contraseña`).value}`
     };
 
-
-
     let service_id = "default_service";
-    let template_id = "rolling";
+    let template_id = "template_P80i089q";
     emailjs.send(service_id, template_id, template_params).then(
         function(response){
             console.log("Respuesta cuando se envio correctament" + response);
+
             document.getElementById("alerta").className="alert alert-info m-4";
             document.getElementById("alerta").innerText= " SU CONSULTA FUE ENVIADA";
         },function(error){

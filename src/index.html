@@ -10,41 +10,8 @@
 </head>
 
 <body class="body-index">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <a class="navbar-brand d-flex" href="index.html">
-                <img src="img/logo-rolling-final.png" alt="logo rolling movies" width="180px">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="index.html">INICIO</a>
-                    <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="admin.html">ADMIN</a>
-                    <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="registro.html">REGISTRATE</a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-primary m-1" href="#"
-                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Qué buscás?
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
-                                href="#pelis">PELIS</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
-                                href="#series">SERIES</a>
-                        </div>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR">
-                    <a class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</a>
-                </form>
-            </div>
-        </nav>
+    <header id="header">
+        
     </header>
     <!-- slider -->
     <div id="carouselExampleIndicators" class="carousel slide mt-5" data-ride="carousel">
@@ -114,6 +81,33 @@
             </article>
         </section>
     </main>
+
+    <!-- modal login -->
+  <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-light" id="exampleModalLabel">Ingresá</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-group" onsubmit="admin(event)">
+                <label>Usuario</label>
+                <input type="text" class="form-control" id="usuario">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" id="pass">
+                <a href="registro.html">¿No estás registrado? Click aquí!</a>
+                <div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <footer class="bg-dark text-light text-center p-3 mt-2" id="footer">
         <a href="https://github.com/" class="mx-3"><i class="fab fa-github fa-2x"></i></a>
