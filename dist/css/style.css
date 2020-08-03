@@ -10,9 +10,23 @@
 
 }
 
-.body-admin{
-    background-color: #FAFDFF;
+.body-acercaDeNostros{
+    margin-top: 72px;
+    background-color: #0C2D45;
 }
+
+/* .body-admin{
+    background-color:#0C2D45;
+} */
+/* 
+.body-admin h1{
+  color: aliceblue;
+}
+
+.body-admin h3{
+    color: aliceblue;
+} */
+
 
 .tituloh1, .card{
     color: #FAFDFF;
@@ -48,7 +62,7 @@ nav, footer{
 .titulo-informacion-series{
     background-color: #1279D6!important;
     color: #FAFDFF;
-  
+    border-radius: 5px;
 }
 
 .cuerpoinfoseries{
@@ -62,3 +76,22 @@ nav, footer{
 .imagen{
     max-width: 100%;
 }
+.icoLinkI:hover{
+    transform: scale(1.3);
+}
+
+.cardGrow { transition: all .2s ease-in-out; }
+.cardGrow:hover { transform: scale(1.1); }
+.section-acercaDeNos{
+    color: aliceblue;}
+
+.card-acercaDeNos{
+    background-color: #36096d;
+background-image: linear-gradient(0deg, #1d437a 0%, #0c97a1 74%);}
+
+
+
+.modal-header{
+    background-color: #0C2D45;
+}
+
