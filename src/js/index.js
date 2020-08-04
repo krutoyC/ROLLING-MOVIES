@@ -136,6 +136,18 @@ function dibujarNav() {
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
                                 href="#series">SERIES</a>
+                                <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                              href="index.html#accion">ACCION</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                            href="index.html#comedia">COMEDIA</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                            href="index.html#drama">DRAMA</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                            href="index.html#infantil">INFANTIL</a>
                         </div>
                     </li>
                 </ul>
