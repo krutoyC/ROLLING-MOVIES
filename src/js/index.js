@@ -24,8 +24,8 @@ function leerProductos() {
                 if (listaPeliculas[i].tipo == "Película") {
                     let catalogoPeliculas = document.getElementById("catalogoPeliculas");
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <a href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <div class="card cardGrow">
+                    <a class="text-decoration-none text-light" href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div></a>
@@ -34,8 +34,8 @@ function leerProductos() {
                 } else {
                     let catalogoSeries = document.getElementById("catalogoSeries");
                     codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <a href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <div class="card cardGrow">
+                    <a class="text-decoration-none text-light" href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div></a>
@@ -46,8 +46,8 @@ function leerProductos() {
                     case "Acción":
                         let catalogoSeries = document.getElementById("catalogoAccion");
                         codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <a href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <div class="card cardGrow">
+                    <a class="text-decoration-none text-light" href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div></a>
@@ -57,8 +57,8 @@ function leerProductos() {
                     case "Comedia":
                         catalogoSeries = document.getElementById("catalogoComedia");
                         codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <a href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <div class="card card-deck cardGrow">
+                    <a class="text-decoration-none text-light" href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div></a>
@@ -68,8 +68,8 @@ function leerProductos() {
                     case "Drama":
                         catalogoSeries = document.getElementById("catalogoDrama");
                         codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <a href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <div class="card cardGrow">
+                    <a class="text-decoration-none text-light" href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div></a>
@@ -79,8 +79,8 @@ function leerProductos() {
                     case "Infantil":
                         catalogoSeries = document.getElementById("catalogoInfantil");
                         codHTML = `<div class="card-deck col-sm-12 col-md-6 col-lg-3 my-3">
-                    <a href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <div class="card cardGrow">
+                    <a class="text-decoration-none text-light" href="infoSeries.html?search=${listaPeliculas[i].codigo}">
                     <img src="img/${listaPeliculas[i].imagen}" class="card-img-top" alt="${listaPeliculas[i].nombre}">
                     <h5 class="card-title text-center mt-2">${listaPeliculas[i].nombre}</h5>
                     </div></a>
