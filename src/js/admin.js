@@ -11,7 +11,6 @@ leerPeliculas();
 let peliculaExistente = false;
 
 window.agregarPelicula = function (event) {
-    event.preventDefault();
     console.log("desde funcion agregar pelicula");
 
     let codigo = document.getElementById('codigo').value;
@@ -133,7 +132,7 @@ function dibujarFilas(arregloLS) {
         <td>${arregloLS[i].descripcion}</td>
         <td>${arregloLS[i].actores}</td>
         <td>${arregloLS[i].duracion}</td>
-        <td class="d-flex"><button class="btn btn-outline-danger mr-1" onclick="eliminarPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
+        <td class="d-flex"><button class="btn btn-outline-dark mr-1" onclick="eliminarPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
                 class="btn btn-outline-primary" onclick="prepararPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button>
                 <button class="btn btn-outline-warning ml-1" onclick="destacadoProducto()" data-toggle="tooltip" data-placement="top" title="destacado"><i class="fas fa-star"></i></button></td>
         </tr>`;
@@ -198,7 +197,7 @@ window.prepararPelicula = function(codigo){
     document.getElementById('duracion').value = objetoEncontrado.duracion;
     document.getElementById('imagen').value = objetoEncontrado.imagen;
     document.getElementById('trailer').value = objetoEncontrado.trailer;
-    // document.getElementById('publicado').value = objetoEncontrado.publicado;
+
 	//mostrar ventana modal
     let ventanaModal = document.getElementById("agregarPelis");
     $(ventanaModal).modal("show");
@@ -223,9 +222,9 @@ function modificarPelicula(){
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
     let actores = document.getElementById('actores').value;
+    let duracion = document.getElementById('duracion').value;
     let imagen = document.getElementById('imagen').value;
     let trailer = document.getElementById('trailer').value;
-    let publicado = document.getElementById('publicado').value;
     
     // buscar el producto que estoy modificando en el arreglo y le cambio los valores
     for(let i in listaPeliculas){
@@ -239,7 +238,6 @@ function modificarPelicula(){
             listaPeliculas[i].duracion = duracion;
             listaPeliculas[i].imagen = imagen;
             listaPeliculas[i].trailer = trailer;
-            listaPeliculas[i].publicado = publicado;
         }
     }
     // actualizar el LS
@@ -248,6 +246,6 @@ function modificarPelicula(){
     leerPeliculas();
     limpiarFormulario();
     // cerrar ventana modal
-    let ventanaModal = document.getElementById("agregarPeli");
+    let ventanaModal = document.getElementById("agregarPelis");
     $(ventanaModal).modal("hide");
 }

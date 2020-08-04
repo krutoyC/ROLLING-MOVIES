@@ -7,60 +7,71 @@
   <title>Rolling Movies</title>
   <link rel="ICON" href="img/logo-rolling-final.png">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
+  <script type="text/javascript">
+    (function () {
       emailjs.init("user_GtdzRYBQ7aAiGuWDLDqTZ");
-   })();
-</script>
+    })();
+  </script>
 </head>
 
 <body class="body-index">
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-      <a class="navbar-brand d-flex" href="index.html">
-        <img src="img/logo-rolling-final.png" alt="logo rolling movies" width="180px">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="index.html">INICIO</a>
-          <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="admin.html">ADMIN</a>
-          <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="registro.html">REGISTRATE</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-primary m-1" href="#" id="navbarDropdown"
-              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Qué buscás?
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold" href="#pelis">PELIS</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold" href="#series">SERIES</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR">
-          <a class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</a>
-        </form>
-      </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand d-flex" href="index.html">
+      <img src="img/logo-rolling-final.png" alt="logo rolling movies" width="180px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="index.html">INICIO</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-primary m-1" href="#" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Qué buscás?
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+              href="index.html#pelis">PELIS</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+              href="index.html#series">SERIES</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+              href="index.html#accion">ACCION</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+              href="index.html#comedia">COMEDIA</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+              href="index.html#drama">DRAMA</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+              href="index.html#infantil">INFANTIL</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR">
+        <a class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</a>
+      </form>
+    </div>
+  </nav>
   </header>
 
   <main class="container my-5 ">
     <div class="d-flex justify-content-center">
-      <section class="card col-lg-6 col-md-8 col-sm-12 bg-light mt-5">
+      <section class="card card-form col-lg-6 col-md-8 col-sm-12 bg-light mt-5">
         <div class="card-header">
-          <h5 class="card-title text-dark">Formulario de Registro</h5>
+          <h5 class="card-title text-light">REGISTRATE</h5>
         </div>
         <div class="card-body">
           <form onsubmit="validarForm(event)">
             <div class="form-group text-primary">
               <label>Nombre de Usuario</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Rolling2020"
-                onblur="revisar(this)" required>
+              <input type="text" class="form-control" id="nombre" placeholder="Rolling2020" onblur="revisar(this)"
+                required>
               <div class="invalid-feedback">Debe ingresar un nombre de usuario</div>
               <div class="valid-feedback"> OK!</div>
             </div>

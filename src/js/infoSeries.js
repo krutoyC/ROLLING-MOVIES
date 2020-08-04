@@ -66,7 +66,7 @@ function dibujarInfo(arregloLS) {
 window.mostrarInfo = function(){
     let serieBuscada = window.location.search.split("=")[1]
     console.log(serieBuscada)
-    document.getElementById(serieBuscada).className ="row justify-content-center"; 
+    document.getElementById(serieBuscada).className = "row justify-content-center";
 }
 
 

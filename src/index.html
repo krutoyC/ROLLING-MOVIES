@@ -45,32 +45,32 @@
     <!-- catálogo -->
     <main class="container-fluid">
         <section id="pelis">
-            <H1 class="tituloh1 font-weight-bold text-center mt-5 mb-3 p-2"><em>PELICULAS</em></H1>
+            <H1 class="paralelogramo mx-auto font-weight-bold text-center mt-5 mb-3 p-2 display-4" id="tituloPeliculas"><em>PELICULAS</em></H1>
             <article class="row justify-content-around" id="catalogoPeliculas">
             </article>
         </section>
         <section id="series">
-            <H1 class="tituloh1 font-weight-bold text-center my-3 p-2"><em>SERIES</em></H1>
+            <H1 class="paralelogramo mx-auto font-weight-bold text-center my-3 p-2" id="tituloSeries"><em>SERIES</em></H1>
             <article class="row justify-content-around" id="catalogoSeries">
             </article>
         </section>
-        <section id="series">
-            <H1 class="tituloh1 font-weight-bold text-center my-3 p-2"><em>ACCION</em></H1>
+        <section id="accion">
+            <H1 class="paralelogramo mx-auto font-weight-bold text-center my-3 p-2" id="tituloAccion"><em>ACCION</em></H1>
             <article class="row justify-content-around" id="catalogoAccion">
             </article>
         </section>
-        <section id="series">
-            <H1 class="tituloh1 font-weight-bold text-center my-3 p-2"><em>COMEDIA</em></H1>
+        <section id="comedia">
+            <H1 class="paralelogramo mx-auto font-weight-bold text-center my-3 p-2" id="tituloComedia"><em>COMEDIA</em></H1>
             <article class="row justify-content-around" id="catalogoComedia">
             </article>
         </section>
-        <section id="series">
-            <H1 class="tituloh1 font-weight-bold text-center my-3 p-2"><em>DRAMA</em></H1>
+        <section id="drama">
+            <H1 class="paralelogramo mx-auto font-weight-bold text-center my-3 p-2" id="tituloDrama"><em>DRAMA</em></H1>
             <article class="row justify-content-around" id="catalogoDrama">
             </article>
         </section>
-        <section id="series">
-            <H1 class="tituloh1 font-weight-bold text-center my-3 p-2"><em>INFANTILES</em></H1>
+        <section id="infantil">
+            <H1 class="paralelogramo mx-auto font-weight-bold text-center my-3 p-2" id="tituloInfantil"><em>INFANTILES</em></H1>
             <article class="row justify-content-around" id="catalogoInfantil">
             </article>
         </section>
@@ -86,15 +86,17 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body text-light">
             <form class="form-group" onsubmit="admin(event)">
                 <label>Usuario</label>
-                <input type="text" class="form-control" id="usuario">
+                <input type="text" class="form-control bg-dark text-light" id="usuario">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" id="pass">
-                <a href="registro.html">¿No estás registrado? Click aquí!</a>
+                <input type="password" class="form-control bg-dark text-light" id="pass">
+                <div class="my-3">
+                    <a href="registro.html">¿No estás registrado? Click aquí!</a>
+                </div>
                 <div>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-primary">Entrar</button>
                 </div>
             </form>
