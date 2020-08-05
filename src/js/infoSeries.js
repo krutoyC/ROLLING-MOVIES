@@ -53,11 +53,12 @@ function dibujarInfo(arregloLS) {
   }
 }
 
-window.mostrarInfo = function () {
-  let serieBuscada = window.location.search.split("=")[1];
-  console.log(serieBuscada);
-  document.getElementById("navInfo").className = "navbar navbar-expand-lg navbar-light fixed-top";
-  document.getElementById("footerInfo").className = "bg-dark text-light text-center p-3";
-  document.getElementById(serieBuscada).className =
-    "mt-5 justify-content-center";
-};
+window.mostrarInfo = function(){
+    let serieBuscada = window.location.search.split("=")[1]
+    console.log(serieBuscada)
+    document.getElementById(serieBuscada).className = "row justify-content-center";
+    document.getElementById("navInfo").className = "navbar navbar-expand-lg navbar-light fixed-top";
+    document.getElementById("footerInfo").className = "bg-dark text-light text-center p-3";
+}
+
+
