@@ -10,6 +10,7 @@ let codHTML = "";
 let usuarioAdmin;
 leerPeliculas();
 let peliculaExistente = false;
+let objetoDestacado = "";
 
 window.agregarPelicula = function (event) {
     let codigo = document.getElementById('codigo').value;
@@ -21,6 +22,7 @@ window.agregarPelicula = function (event) {
     let duracion = document.getElementById('duracion').value;
     let imagen = document.getElementById('imagen').value;
     let imagenInfo = document.getElementById("imagenInfo").value;
+    let imagenDestacado = document.getElementById("imagenDestacado").value
     let trailer = document.getElementById('trailer').value;
     let publicar;
     let check = document.getElementById("publicar");
@@ -39,7 +41,7 @@ window.agregarPelicula = function (event) {
         validarDescripcion(document.getElementById('descripcion')) &&
         validarTexto(document.getElementById('actores')) &&
         validarTexto(document.getElementById('duracion'))) {
-        let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, imagenInfo, trailer, publicar);
+        let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, imagenInfo, imagenDestacado, trailer, publicar);
         console.log(peliculaNueva);
         //agregar objeto al arreglo
         listaPeliculas.push(peliculaNueva);
@@ -118,12 +120,15 @@ function leerPeliculas() {
         borrarFilas();
         // dibujar filas de la tabla
         dibujarFilas(arregloLS);
+        // desabilitar boton destacado
+        // deshabilitarDestacado();
     }
 }
 
 function dibujarFilas(arregloLS) {
     let tabla = document.getElementById("tablaPelis");
     for (let i in arregloLS) {
+        if(arregloLS[i].destacado == false){
         codHTML = `<tr>
         <th scope="row">${arregloLS[i].codigo}</th>
         <td>${arregloLS[i].nombre}</td>
@@ -134,11 +139,25 @@ function dibujarFilas(arregloLS) {
         <td>${arregloLS[i].duracion}</td>
         <td class="d-flex"><button class="btn btn-outline-dark mr-1" onclick="eliminarPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
                 class="btn btn-outline-primary" onclick="prepararPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-outline-warning ml-1" onclick="destacadoProducto()" data-toggle="tooltip" data-placement="top" title="destacado"><i class="fas fa-star"></i></button></td>
+                <button class="btn btn-outline-warning ml-1" data-toggle="tooltip" data-placement="top" title="Destacar" onclick="destacadoProducto(${arregloLS[i].codigo})" id="btnDestacado${arregloLS[i].codigo}"><i class="fas fa-star"></i></button></td>
+        </tr>`;
+        tabla.innerHTML += codHTML;
+    } else{
+        codHTML = `<tr>
+        <th scope="row">${arregloLS[i].codigo}</th>
+        <td>${arregloLS[i].nombre}</td>
+        <td>${arregloLS[i].tipo}</td>
+        <td>${arregloLS[i].categoria}</td>
+        <td>${arregloLS[i].descripcion}</td>
+        <td>${arregloLS[i].actores}</td>
+        <td>${arregloLS[i].duracion}</td>
+        <td class="d-flex"><button class="btn btn-outline-dark mr-1" onclick="eliminarPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
+                class="btn btn-outline-primary" onclick="prepararPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-warning ml-1" data-toggle="tooltip" data-placement="top" title="Destacar" onclick="destacadoProducto(${arregloLS[i].codigo})" id="btnDestacado${arregloLS[i].codigo}"><i class="fas fa-star"></i></button></td>
         </tr>`;
         tabla.innerHTML += codHTML;
     }
-}
+}}
 
 
 function borrarFilas() {
@@ -162,6 +181,7 @@ window.limpiarFormulario = function () { // limpia todos los input del formulari
     document.getElementById('duracion').className = "form-control";
     document.getElementById('imagen').className = "form-control";
     document.getElementById('imagenInfo').className = "form-control";
+    document.getElementById('imagenDestacado').className = "form-control";
     document.getElementById('trailer').className = "form-control";
     peliculaExistente = false;
 }
@@ -198,6 +218,7 @@ window.prepararPelicula = function(codigo){
     document.getElementById('duracion').value = objetoEncontrado.duracion;
     document.getElementById('imagen').value = objetoEncontrado.imagen;
     document.getElementById('imagenInfo').value = objetoEncontrado.imagenInfo;
+    document.getElementById('imagenDestacado').value = objetoEncontrado.imagenDestacado;
     document.getElementById('trailer').value = objetoEncontrado.trailer;
 
 	//mostrar ventana modal
@@ -227,6 +248,7 @@ function modificarPelicula(){
     let duracion = document.getElementById('duracion').value;
     let imagen = document.getElementById('imagen').value;
     let imagenInfo = document.getElementById('imagenInfo').value;
+    let imagenDestacado = document.getElementById('imagenDestacado').value;
     let trailer = document.getElementById('trailer').value;
     
     // buscar el producto que estoy modificando en el arreglo y le cambio los valores
@@ -241,6 +263,7 @@ function modificarPelicula(){
             listaPeliculas[i].duracion = duracion;
             listaPeliculas[i].imagen = imagen;
             listaPeliculas[i].imagenInfo = imagenInfo;
+            listaPeliculas[i].imagenDestacado = imagenDestacado;
             listaPeliculas[i].trailer = trailer;
         }
     }
@@ -258,4 +281,26 @@ window.cerrarSesion = function(){
     usuarioAdmin = JSON.parse(localStorage.getItem("usuarioKey"));
     usuarioAdmin.adminStatus = false;
     localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
+}
+
+
+
+window.destacadoProducto = function(codigo){
+    objetoDestacado = listaPeliculas.find(function(pelicula){
+        return pelicula.codigo == codigo;
+	})
+    console.log(objetoDestacado);
+    for(let i in listaPeliculas){
+        if(listaPeliculas[i].codigo == objetoDestacado.codigo){
+            if(objetoDestacado.destacado == false){
+                listaPeliculas[i].destacado = true;
+                document.getElementById(`btnDestacado${objetoDestacado.codigo}`).className = "btn btn-warning ml-1";
+            } else{
+                document.getElementById(`btnDestacado${objetoDestacado.codigo}`).className = "btn btn-outline-warning ml-1"
+                listaPeliculas[i].destacado = false;
+            }
+        }
+    }
+    // actualizar el LS
+    localStorage.setItem("peliculaKey", JSON.stringify(listaPeliculas));
 }
