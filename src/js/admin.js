@@ -111,7 +111,7 @@ window.validarCheck = function () {
 
 function leerPeliculas() {
     // pregunto si el localstorage tiene datos
-    if (localStorage.length > 0) {
+    if (localStorage.length > 1) {
         let arregloLS = JSON.parse(localStorage.getItem("peliculaKey"));
         if (listaPeliculas.length == 0) {
             listaPeliculas = arregloLS;
