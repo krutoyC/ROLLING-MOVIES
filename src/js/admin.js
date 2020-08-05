@@ -120,8 +120,6 @@ function leerPeliculas() {
         borrarFilas();
         // dibujar filas de la tabla
         dibujarFilas(arregloLS);
-        // desabilitar boton destacado
-        // deshabilitarDestacado();
     }
 }
 
@@ -295,12 +293,29 @@ window.destacadoProducto = function(codigo){
             if(objetoDestacado.destacado == false){
                 listaPeliculas[i].destacado = true;
                 document.getElementById(`btnDestacado${objetoDestacado.codigo}`).className = "btn btn-warning ml-1";
+                let arregloFiltrado = listaPeliculas.filter(function(pelicula){
+                    return pelicula.codigo != codigo;
+                });
+                for(let i in arregloFiltrado){
+                    document.getElementById(`btnDestacado${arregloFiltrado[i].codigo}`).setAttribute("disabled", "")
+                }
             } else{
                 document.getElementById(`btnDestacado${objetoDestacado.codigo}`).className = "btn btn-outline-warning ml-1"
                 listaPeliculas[i].destacado = false;
+                let arregloFiltrado = listaPeliculas.filter(function(pelicula){
+                    return pelicula.codigo != codigo;
+                });
+                for(let i in arregloFiltrado){
+                    document.getElementById(`btnDestacado${arregloFiltrado[i].codigo}`).removeAttribute("disabled", "")
+                }
             }
         }
     }
     // actualizar el LS
     localStorage.setItem("peliculaKey", JSON.stringify(listaPeliculas));
+
+
+    let arregloFiltrado = listaPeliculas.filter(function(pelicula){
+		return pelicula.codigo != codigo;
+    });
 }
