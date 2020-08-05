@@ -7,6 +7,7 @@ import $ from 'jquery';
 
 let listaPeliculas = [];
 let codHTML = "";
+let usuarioAdmin;
 leerPeliculas();
 let peliculaExistente = false;
 
@@ -251,4 +252,10 @@ function modificarPelicula(){
     // cerrar ventana modal
     let ventanaModal = document.getElementById("agregarPelis");
     $(ventanaModal).modal("hide");
+}
+
+window.cerrarSesion = function(){
+    usuarioAdmin = JSON.parse(localStorage.getItem("usuarioKey"));
+    usuarioAdmin.adminStatus = false;
+    localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
 }

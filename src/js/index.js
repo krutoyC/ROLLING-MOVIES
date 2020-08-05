@@ -94,6 +94,7 @@ window.admin = function (e) {
     if (document.getElementById('usuario').value == usuarioAdmin.nombre && document.getElementById('pass').value == usuarioAdmin.password) {
         usuarioAdmin.adminStatus = true;
         localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
+        alert("Bienvenido Admin")
         console.log(usuarioAdmin)
         dibujarNav();
         let ventanaModal = document.getElementById("modalLogin");
