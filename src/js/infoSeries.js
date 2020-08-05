@@ -29,16 +29,11 @@ function dibujarInfo(arregloLS) {
                 <div class="card my-5 mx-auto" style="max-width: none;">
                     <div class="row no-gutters">
                         <div class="col-sm-12 col-md-6 bg-dark">
-                            <img src="img/${listaPeliculas[i].imagen}" class="card-img" alt="poster ${listaPeliculas[i].nombre}">
+                            <img src="img/info/${listaPeliculas[i].imagenInfo}" class="card-img" alt="poster ${listaPeliculas[i].nombre}">
                         </div>
                         <div
                             class="col-sm-12 col-md-6 bg-dark text-light d-flex justify-content-center">
                             <div class="card-body bg-dark">
-                                <div class="titulo-informacion-series">
-                                    <span
-                                        class="d-block p-2 mb-3 bg-primary text-white text-center titulo-informacion-series">Conoce
-                                        más de tus programas favoritos</span>
-                                </div>
                                 <h2 class="card-title text-uppercase font-weight-bold text-light text-center mt-2"><em>${listaPeliculas[i].nombre}</em></h2>
                                 <br>
                                 <p class="card-text text-justify"><strong>DESCRIPCIÓN: </strong>${listaPeliculas[i].descripcion}</p>

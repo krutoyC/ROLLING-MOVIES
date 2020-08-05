@@ -4,15 +4,9 @@ import '@fortawesome/fontawesome-free/js/all.min.js'
 import '../css/style.css';
 import $ from 'jquery';
 
-// usuario admin
-let usuarioAdmin = {
-    nombre: "Admin",
-    password: "1234admin",
-    adminStatus: false
-}
-
 let codHTML = "";
 let codigoNav = "";
+let usuarioAdmin;
 dibujarNav();
 leerProductos();
 
@@ -98,9 +92,9 @@ function leerProductos() {
 window.admin = function (e) {
     e.preventDefault();
     if (document.getElementById('usuario').value == usuarioAdmin.nombre && document.getElementById('pass').value == usuarioAdmin.password) {
-        console.log(usuarioAdmin.nombre)
-        console.log(usuarioAdmin.password)
         usuarioAdmin.adminStatus = true;
+        localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
+        console.log(usuarioAdmin)
         dibujarNav();
         let ventanaModal = document.getElementById("modalLogin");
         $(ventanaModal).modal("hide");
@@ -110,6 +104,7 @@ window.admin = function (e) {
 }
 
 function dibujarNav() {
+    usuarioAdmin = JSON.parse(localStorage.getItem("usuarioKey"));
     if (usuarioAdmin.adminStatus == false) {
         let navBar = document.getElementById("header");
         codigoNav = `<nav class="navbar navbar-expand-lg navbar-light fixed-top">

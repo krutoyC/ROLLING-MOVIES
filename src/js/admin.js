@@ -11,8 +11,6 @@ leerPeliculas();
 let peliculaExistente = false;
 
 window.agregarPelicula = function (event) {
-    console.log("desde funcion agregar pelicula");
-
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let tipo = document.getElementById('tipo').value;
@@ -21,6 +19,7 @@ window.agregarPelicula = function (event) {
     let actores = document.getElementById('actores').value;
     let duracion = document.getElementById('duracion').value;
     let imagen = document.getElementById('imagen').value;
+    let imagenInfo = document.getElementById("imagenInfo").value;
     let trailer = document.getElementById('trailer').value;
     let publicar;
     let check = document.getElementById("publicar");
@@ -39,7 +38,7 @@ window.agregarPelicula = function (event) {
         validarDescripcion(document.getElementById('descripcion')) &&
         validarTexto(document.getElementById('actores')) &&
         validarTexto(document.getElementById('duracion'))) {
-        let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, trailer, publicar);
+        let peliculaNueva = new Pelicula(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, imagenInfo, trailer, publicar);
         console.log(peliculaNueva);
         //agregar objeto al arreglo
         listaPeliculas.push(peliculaNueva);
@@ -161,6 +160,7 @@ window.limpiarFormulario = function () { // limpia todos los input del formulari
     document.getElementById('actores').className = "form-control";
     document.getElementById('duracion').className = "form-control";
     document.getElementById('imagen').className = "form-control";
+    document.getElementById('imagenInfo').className = "form-control";
     document.getElementById('trailer').className = "form-control";
     peliculaExistente = false;
 }
@@ -196,6 +196,7 @@ window.prepararPelicula = function(codigo){
     document.getElementById('actores').value = objetoEncontrado.actores;
     document.getElementById('duracion').value = objetoEncontrado.duracion;
     document.getElementById('imagen').value = objetoEncontrado.imagen;
+    document.getElementById('imagenInfo').value = objetoEncontrado.imagenInfo;
     document.getElementById('trailer').value = objetoEncontrado.trailer;
 
 	//mostrar ventana modal
@@ -224,6 +225,7 @@ function modificarPelicula(){
     let actores = document.getElementById('actores').value;
     let duracion = document.getElementById('duracion').value;
     let imagen = document.getElementById('imagen').value;
+    let imagenInfo = document.getElementById('imagenInfo').value;
     let trailer = document.getElementById('trailer').value;
     
     // buscar el producto que estoy modificando en el arreglo y le cambio los valores
@@ -237,6 +239,7 @@ function modificarPelicula(){
             listaPeliculas[i].actores = actores;
             listaPeliculas[i].duracion = duracion;
             listaPeliculas[i].imagen = imagen;
+            listaPeliculas[i].imagenInfo = imagenInfo;
             listaPeliculas[i].trailer = trailer;
         }
     }
