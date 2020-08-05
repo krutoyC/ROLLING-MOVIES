@@ -3,11 +3,11 @@ import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min.js'
 import '../css/style.css';
 import $ from 'jquery';
+import {usuarioAdmin} from './usuario.js';
 
 let codHTML = "";
 let codigoNav = "";
 let codDestacado = "";
-let usuarioAdmin;
 dibujarNav();
 dibujarDestacado();
 leerProductos();
@@ -93,7 +93,7 @@ function leerProductos() {
 // logear admin
 window.admin = function (e) {
     e.preventDefault();
-    if (document.getElementById('usuario').value == usuarioAdmin.nombre && document.getElementById('pass').value == usuarioAdmin.password) {
+    if (document.getElementById('usuario').value == "Admin" && document.getElementById('pass').value == "1234admin") {
         usuarioAdmin.adminStatus = true;
         localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
         alert("Bienvenido Admin")
@@ -106,9 +106,12 @@ window.admin = function (e) {
     }
 }
 
+// localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
+
 function dibujarNav() {
-    usuarioAdmin = JSON.parse(localStorage.getItem("usuarioKey"));
-    if (usuarioAdmin.adminStatus == false) {
+    if (localStorage.length > 0) {
+        let usuarioAdmin = JSON.parse(localStorage.getItem("usuarioKey"));
+        if (usuarioAdmin.adminStatus == false) {
         let navBar = document.getElementById("header");
         codigoNav = `<nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <a class="navbar-brand d-flex" href="index.html">
@@ -182,6 +185,55 @@ function dibujarNav() {
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
                                 href="#series">SERIES</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR">
+                    <a class="btn btn-outline-primary my-2 my-sm-0" type="submit">BUSCAR</a>
+                </form>
+            </div>
+        </nav>`
+        navBar.innerHTML = codigoNav;
+    }
+} else{
+    let navBar = document.getElementById("header");
+        codigoNav = `<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand d-flex" href="index.html">
+                <img src="img/logo-rolling-final.png" alt="logo rolling movies" width="180px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="index.html">INICIO</a>
+                    <a type="button" class="btn btn-outline-primary text-uppercase m-1"  data-toggle="modal" data-target="#modalLogin"">LOG IN</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-primary m-1" href="#"
+                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Qué buscás?
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                href="#pelis">PELIS</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                href="#series">SERIES</a>
+                                <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                              href="index.html#accion">ACCION</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                            href="index.html#comedia">COMEDIA</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                            href="index.html#drama">DRAMA</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                            href="index.html#infantil">INFANTIL</a>
                         </div>
                     </li>
                 </ul>
