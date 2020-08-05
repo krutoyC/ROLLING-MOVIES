@@ -28,7 +28,7 @@ window.validarEmail = function(elemento) {
 }
 
 window.validarNumeros = function (input) {
-    if (input.value != "" && !isNaN(input.value)) {
+    if (input.value.length >= 8 && !isNaN(input.value)) {
         input.className = "form-control is-valid"; return true;
     } else {
         input.className = "form-control is-invalid"; return false;
@@ -58,8 +58,6 @@ window.validarForm = function (event) {
         validarNumeros(document.getElementById("contraseña")) &&
         validarCheck()) {
         enviarMail();    
-    } else {
-       
     }
 }
 

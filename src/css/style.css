@@ -91,7 +91,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(18,121,214,1) 100%);
 
 .card{
     color: #FAFDFF!important;
-    background-color: #43474A!important;
+    background-color: #43474A;
 }
 
 nav{
@@ -112,7 +112,7 @@ footer{
 }
 
 .cuerpoinfoseries{
-    margin-top: 80px;
+    margin-top: 100px;
     background-color: #000000;
 }
 
@@ -137,3 +137,10 @@ background-image: linear-gradient(0deg, #1d437a 0%, #0c97a1 74%);}
     background: rgb(67,71,74);
 background: linear-gradient(270deg, rgba(67,71,74,1) 0%, rgba(12,45,69,1) 100%);
 }
+
+.card-info{
+    border: none;
+    background: rgb(0,0,0);
+background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(67,71,77,1) 100%);
+}
+
