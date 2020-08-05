@@ -152,7 +152,7 @@
                             <div class="valid-feedback"></div>
                         </div>
                         <div class="form-group">
-                            <label>Descripción</label>
+                            <label>Descripción (al menos 10 caracteres)</label>
                             <input type="text" class="form-control" id="descripcion"
                                 placeholder="Ingrese una Descripcion" onblur="validarDescripcion(this)">
                             <div class="invalid-feedback">
@@ -190,6 +190,11 @@
                                 placeholder="Ingrese un nombre de imagen">
                         </div>
                         <div class="form-group">
+                            <label for="formGroupExampleInput2">Imagen-Destacado</label>
+                            <input type="text" class="form-control" id="imagenDestacado"
+                                placeholder="Ingrese un nombre de imagen">
+                        </div>
+                        <div class="form-group">
                             <label for="formGroupExampleInput2">Trailer</label>
                             <input type="text" class="form-control" id="trailer" placeholder="Ingrese el trailer">
                         </div>
@@ -199,12 +204,6 @@
                                 <input class="form-check-input" type="checkbox" id="publicar">
                             </div>
                         </div>
-                            <div class="form-group">
-                                <label>Destacado? </label>
-                                <div class="form-check form-check-inline ml-2">
-                                    <input class="form-check-input" type="checkbox" id="destacado">
-                                </div>
-                            </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <button type="button" class="btn btn-dark ml-3" data-dismiss="modal" onclick="limpiarFormulario()">
                             Cerrar
@@ -214,6 +213,32 @@
             </div>
         </div>
     </div>
+  
+  <!-- Modal destacado -->
+  <div class="modal fade" id="modalDestacado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-light" id="exampleModalLabel">Destacar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-group" onsubmit="guardarDestacado(event)">
+                <div class="mb-3">
+                    <label class="text-light">Imagen Destacada</label>
+                    <input type="text" class="form-control" placeholder="birds-of-prey-destacada.jpg" id="imagenDestacado" onblur="validarTexto(this)" required>
+                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Destacar</button>
+            </form>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
     <footer class="bg-dark text-light text-center p-3 mt-2" id="footer">
         <a href="https://github.com/" class="mx-3"><i class="fab fa-github fa-2x"></i></a>
         <a href="https://twitter.com/?lang=es" class="m-3"><i class="fab fa-twitter fa-2x"></i></a>

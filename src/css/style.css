@@ -1,5 +1,5 @@
 .body-index{
-    margin-top: 80px;
+    margin-top: 100px;
     background-color: #000000;
 
 }
@@ -144,3 +144,10 @@ background: linear-gradient(270deg, rgba(67,71,74,1) 0%, rgba(12,45,69,1) 100%);
 background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(67,71,77,1) 100%);
 }
 
+.texto-destacado{
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    width: 35%;
+    text-shadow: 1px 1px 2px black;
+}
