@@ -136,7 +136,7 @@ function dibujarFilas(arregloLS) {
         <td>${arregloLS[i].duracion}</td>
         <td class="d-flex"><button class="btn btn-outline-dark mr-1" onclick="eliminarPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash"></i></button><button
                 class="btn btn-outline-primary" onclick="prepararPelicula(${arregloLS[i].codigo})" data-toggle="tooltip" data-placement="top" title="Modificar"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-outline-warning ml-1" data-toggle="tooltip" data-placement="top" title="Destacar" onclick="destacadoProducto(${arregloLS[i].codigo})" id="btnDestacado${arregloLS[i].codigo}"><i class="fas fa-star"></i></button></td>
+                <button class="btn btn-outline-warning ml-1" data-toggle="tooltip" data-placement="top" title="Destacar" onclick="destacadoProducto(${arregloLS[i].codigo})" id="btnDestacado${arregloLS[i].codigo}" disabled><i class="fas fa-star"></i></button></td>
         </tr>`;
         tabla.innerHTML += codHTML;
     } else{
@@ -317,8 +317,5 @@ window.destacadoProducto = function(codigo){
     }
     // actualizar el LS
     localStorage.setItem("peliculaKey", JSON.stringify(listaPeliculas));
-
-    let arregloFiltrado = listaPeliculas.filter(function(pelicula){
-		return pelicula.codigo != codigo;
-    });
 }
+
