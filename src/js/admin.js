@@ -343,16 +343,3 @@ window.destacadoProducto = function (codigo) {
   // actualizar el LS
   localStorage.setItem("peliculaKey", JSON.stringify(listaPeliculas));
 };
-
-function inhabilitarDestacado() {
-  for (let i in listaPeliculas) {
-    if (listaPeliculas[i].destacado == false) {
-      document.getElementById(
-        `btnDestacado${listaPeliculas[i].codigo}`
-      ).className = "btn btn-outline-warning ml-1";
-      document
-        .getElementById(`btnDestacado${listaPeliculas[i].codigo}`)
-        .setAttribute("disabled", "");
-    }
-  }
-}
