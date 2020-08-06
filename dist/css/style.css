@@ -163,3 +163,6 @@ html{
     position: relative;
 }
 
+.dropdown-toggle{
+    height: 38px;
+}

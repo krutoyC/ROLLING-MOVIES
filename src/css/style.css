@@ -156,3 +156,7 @@ html{
     min-height: 100%;
     position: relative;
 }
+
+.dropdown-toggle{
+    height: 38px;
+}
