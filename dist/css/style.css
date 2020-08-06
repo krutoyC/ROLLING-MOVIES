@@ -158,3 +158,8 @@ background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(67,71,77,1) 100%);
     text-shadow: 3px 3px 4px black;
 }
 
+html{
+    min-height: 100%;
+    position: relative;
+}
+

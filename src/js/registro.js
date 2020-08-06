@@ -73,11 +73,11 @@ function enviarMail() {
         function(response){
             console.log("Respuesta cuando se envio correctament" + response);
 
-            document.getElementById("alerta").className="alert alert-info m-4";
-            document.getElementById("alerta").innerText= " SU CONSULTA FUE ENVIADA";
+            document.getElementById("alerta").className="alert alert-primary m-2 text-center";
+            document.getElementById("alerta").innerText= "Su solicitud de registro fue enviada";
         },function(error){
             console.log("se produjo un error" + error);
-            document.getElementById("alerta").className="alert alert-danger m-4";
+            document.getElementById("alerta").className="alert alert-danger m-2 text-center";
             document.getElementById("alerta").innerText= " OCURRIO UN ERROR EN EL ENVIO";
         }
     )
