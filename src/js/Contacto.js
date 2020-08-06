@@ -6,7 +6,6 @@ import $ from 'jquery';
 
 console.log("hola");
 
-
 window.revisar = function () {
     let elemento = document.getElementById("nombre");
     if (elemento.value == "") {
@@ -66,15 +65,11 @@ window.validartodo = function (event) {
     } else {
         alert("Hay un error en el formulario");
     }
-
 }
 
-function enviarEmail() {
-    
-    
+function enviarEmail() {     
     let template_params = {
         from_name: document.getElementById("nombre").value,
-       
         message_html: `Mensaje: ${document.getElementById("textArea").value} - Email: ${document.getElementById("email").value}`
     };
     
@@ -89,15 +84,12 @@ limpiarConsulta();
         console.log("fallo en el envio"+error);
         ocument.getElementById("envio").className="alert alert-danger my-4";
 document.getElementById("envio").innerText="Falló en el envio";
-    })
-    
+    }) 
 }
 
 
 function limpiarConsulta() {
     let formulario = document.getElementById("formularioConsulta");
-
-    formulario.reset();
-    
+    formulario.reset();   
 }
 

@@ -24,10 +24,7 @@ window.filtrar = function (){
             <a class="text-decoration-none text-light" href="infoSeries.html?search=${pelicula.codigo}">
             <img src="img/${pelicula.imagen}" class="card-img-top" alt="${pelicula.nombre}">
             <h5 class="card-title text-center mt-2">${pelicula.nombre}</h5>
-            </div></a></div>`
-            
-            //`<li class= "text-light"><a class="text-decoration-none" href="info.html"> Nombre: ${pelicula.nombre} - Tipo: ${pelicula.tipo} - Categoria: ${pelicula.categoria}</a></li>`
-        }
+            </div></a></div>`  }
     }
     
     if(resultado.innerHTML === ``){
@@ -36,7 +33,6 @@ window.filtrar = function (){
 }
 
 botonBuscar.addEventListener(`click`,filtrar);
-
 
 buscar.addEventListener(`keypress`, function (event){
     if (event.keyCode === 13) { 

@@ -33,7 +33,6 @@ window.agregarPelicula = function (event) {
     }
     console.log(publicar);
 
-    // validar formulario
     if (validarNumero(document.getElementById('codigo')) &&
         validarTexto(document.getElementById('nombre')) &&
         validarTexto(document.getElementById('categoria')) &&
@@ -281,8 +280,6 @@ window.cerrarSesion = function(){
     localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
 }
 
-
-
 window.destacadoProducto = function(codigo){
     objetoDestacado = listaPeliculas.find(function(pelicula){
         return pelicula.codigo == codigo;
@@ -313,7 +310,6 @@ window.destacadoProducto = function(codigo){
     }
     // actualizar el LS
     localStorage.setItem("peliculaKey", JSON.stringify(listaPeliculas));
-
 
     let arregloFiltrado = listaPeliculas.filter(function(pelicula){
 		return pelicula.codigo != codigo;

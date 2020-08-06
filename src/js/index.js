@@ -108,8 +108,6 @@ window.admin = function (e) {
   }
 };
 
-// localStorage.setItem('usuarioKey', JSON.stringify(usuarioAdmin));
-
 function dibujarNav() {
   if (localStorage.length > 0) {
     let usuarioAdmin = JSON.parse(localStorage.getItem("usuarioKey"));
@@ -182,9 +180,7 @@ window.filtrar = function (){
             <img src="img/${pelicula.imagen}" class="card-img-top" alt="${pelicula.nombre}">
             <h5 class="card-title text-center mt-2">${pelicula.nombre}</h5>
             </div></a></div>`
-            
-            //`<li class= "text-light"><a class="text-decoration-none" href="info.html"> Nombre: ${pelicula.nombre} - Tipo: ${pelicula.tipo} - Categoria: ${pelicula.categoria}</a></li>`
-        }
+          }
     }
     
     if(resultado.innerHTML === ``){
