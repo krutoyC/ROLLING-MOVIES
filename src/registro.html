@@ -15,7 +15,7 @@
 </head>
 
 <body class="body-index">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <nav class="navbar navbar-expand-md fixed-top">
     <a class="navbar-brand d-flex" href="index.html">
       <img src="img/logo-rolling-final.png" alt="logo rolling movies" width="180px">
     </a>
@@ -62,28 +62,28 @@
 
   <main class="container my-5 ">
     <div class="row justify-content-center">
-      <section class="card card-form col-lg-6 col-md-8 col-sm-12 bg-light mt-5">
+      <section class="card card-form col-lg-6 col-md-8 col-sm-12 bg-light mt-5 mx-3">
         <div class="card-header">
           <h5 class="card-title text-light">REGISTRATE</h5>
         </div>
         <div class="card-body">
           <form onsubmit="validarForm(event)">
             <div class="form-group text-primary">
-              <label>Nombre de Usuario</label>
+              <label>Nombre de Usuario<span class="required text-danger"> * </span></label>
               <input type="text" class="form-control" id="nombre" placeholder="Rolling2020" onblur="revisar(this)"
                 required>
               <div class="invalid-feedback">Debe ingresar un nombre de usuario</div>
               <div class="valid-feedback"> OK!</div>
             </div>
             <div class="form-group text-primary">
-              <label>Email</label>
+              <label>Email<span class="required text-danger"> * </span></label>
               <input type="email" class="form-control" id="email" placeholder="rolling.movies@gmail.com"
                 onblur="validarEmail(this)" required>
               <div class="invalid-feedback">Debe ingresar un mail válido</div>
               <div class="valid-feedback">OK!</div>
             </div>
             <div class="form-group text-primary">
-              <label>Contraseña</label>
+              <label>Contraseña<span class="required text-danger"> * </span></label>
               <input type="number" class="form-control" id="contraseña" placeholder="01236549"
                 onkeyup="validarNumeros(this)" required>
               <div class="invalid-feedback ">Debe ingresar una contraseña de 8 digítos</div>
@@ -101,7 +101,7 @@
             </div>
             <button class="btn btn-primary btn-block" type="submit">Registrarse</button>
           </form>
-          <div class="alert alert-info m-4 d-none" role="alert" id="alerta">
+          <div class="alert alert-primary m-2 d-none" role="alert" id="alerta"></div>
 
           </div>
         </div>

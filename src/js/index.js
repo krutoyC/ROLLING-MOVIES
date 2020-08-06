@@ -252,11 +252,11 @@ function dibujarDestacado(){
         for (let i in arregloLS) {
             if (arregloLS[i].destacado) {
                 let sectionDestacado = document.getElementById("destacado");
-                codDestacado = `<div class="card bg-dark text-white">
+                codDestacado = `<div class="card card-info text-white">
                 <img src="img/destacado/${arregloLS[i].imagenDestacado}" class="card-img" alt="${arregloLS[i].nombre}">
                 <div class="row justify-content-end">
-                    <div class="texto-destacado">
-                        <h3 class="col-12 card-title text-light"><strong>${arregloLS[i].nombre}</strong></h3>
+                    <div class="texto-destacado d-none d-lg-block">
+                        <h2 class="col-12 card-title text-light"><strong>${arregloLS[i].nombre}</strong></h2>
                         <p class="col-12 card-text text-light my-4"><strong>${arregloLS[i].descripcion}</strong></p>
                         <p class="col-12 card-text text-light"><strong>Reparto: ${arregloLS[i].actores}</strong></p>
                     </div>

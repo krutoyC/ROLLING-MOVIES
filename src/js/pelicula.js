@@ -1,5 +1,5 @@
 export default class Pelicula{
-    constructor(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, imagenInfo, trailer, publicar, destacado, imagenDestacado){
+    constructor(codigo, nombre, tipo, categoria, descripcion, actores, duracion, imagen, imagenInfo, imagenDestacado, trailer, publicar, destacado){
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
