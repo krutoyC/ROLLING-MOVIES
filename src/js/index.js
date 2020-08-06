@@ -111,7 +111,7 @@ window.admin = function (e) {
 function dibujarNav() {
   if (localStorage.length > 0) {
     let usuarioAdmin = JSON.parse(localStorage.getItem("usuarioKey"));
-    if ((usuarioAdmin == null)) {
+    if (usuarioAdmin == null) {
       usuarioAdmin = {
         nombre: "Admin",
         password: "1234admin",
@@ -131,11 +131,6 @@ function dibujarNav() {
       <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="admin.html">ADMIN</a>`;
       navBar.innerHTML = codigoNav;
     }}
-  } else {
-    let navBar = document.getElementById("botonesNav");
-    codigoNav = `<a type="button" class="btn btn-outline-primary text-uppercase m-1" href="index.html">INICIO</a>
-    <a type="button" class="btn btn-outline-primary text-uppercase m-1"  data-toggle="modal" data-target="#modalLogin>LOG IN</a>`;
-    navBar.innerHTML = codigoNav;
   }
 }
 
