@@ -11,7 +11,54 @@
 
 <body class="body-index">
     <header id="header">
-
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand d-flex" href="index.html">
+                <img src="img/logo-rolling-final.png" alt="logo rolling movies" width="180px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <div id="botonesNav">
+                        <a type="button" class="btn btn-outline-primary text-uppercase m-1" href="index.html">INICIO</a>
+                        <a type="button" class="btn btn-outline-primary text-uppercase m-1" data-toggle="modal"
+                            data-target="#modalLogin">LOG IN</a>
+                    </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-uppercase btn btn-outline-primary m-1" href="#"
+                                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Qué buscás?
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                    href="#pelis">PELIS</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                    href="#series">SERIES</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                    href="index.html#accion">ACCION</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                    href="index.html#comedia">COMEDIA</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                    href="index.html#drama">DRAMA</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-uppercase btn btn-outline-primary font-weight-bold"
+                                    href="index.html#infantil">INFANTIL</a>
+                            </div>
+                        </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="BUSCAR" placeholder="BUSCAR" aria-label="BUSCAR" id="buscar">
+                    <a class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="botonBuscar" >BUSCAR</a>
+                </form>
+            </div>
+        </nav>
     </header>
     <!--RESULTADO BUSQUEDA-->
     <section  class="container" id="mostrarResultado">
@@ -20,7 +67,7 @@
    </section>
     <!-- destacado -->
     <section class="container-fluid" id="destacado">
-        
+
     </section>
 
     <!-- catálogo -->

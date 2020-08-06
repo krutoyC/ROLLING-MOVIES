@@ -164,5 +164,8 @@ html{
 }
 
 #mostrarResultado{
-    background-color: #000000;
+    background-color: #000000;}
+    
+.dropdown-toggle{
+    height: 38px;
 }
