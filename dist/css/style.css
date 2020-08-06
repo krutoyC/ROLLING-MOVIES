@@ -158,3 +158,6 @@ background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(67,71,77,1) 100%);
     text-shadow: 1px 1px 2px black;
 }
 
+#mostrarResultado{
+    background-color: #000000;
+}
