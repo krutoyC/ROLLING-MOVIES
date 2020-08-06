@@ -96,7 +96,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(18,121,214,1) 100%);
 
 nav{
     background: rgb(0,0,0);
-background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(67,71,77,1) 50%, rgba(12,45,69,1) 100%);
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(67,71,77,1) 50%, rgba(12,45,69,1) 100%);
 } 
 footer{
     color: #1279d6;
@@ -149,5 +149,5 @@ background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(67,71,77,1) 100%);
     left: 0px;
     bottom: 10px;
     width: 35%;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 3px 3px 4px black;
 }
