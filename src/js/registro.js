@@ -81,5 +81,4 @@ function enviarMail() {
             document.getElementById("alerta").innerText= " OCURRIO UN ERROR EN EL ENVIO";
         }
     )
-
 }
