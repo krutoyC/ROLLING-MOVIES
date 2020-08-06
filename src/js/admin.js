@@ -247,6 +247,12 @@ function modificarPelicula(){
     let imagenInfo = document.getElementById('imagenInfo').value;
     let imagenDestacado = document.getElementById('imagenDestacado').value;
     let trailer = document.getElementById('trailer').value;
+    let publicar = document.getElementById('publicar').publicar;
+    if (check.checked) {
+        publicar = true;
+    } else {
+        publicar = false;
+    }
     
     // buscar el producto que estoy modificando en el arreglo y le cambio los valores
     for(let i in listaPeliculas){
@@ -262,6 +268,7 @@ function modificarPelicula(){
             listaPeliculas[i].imagenInfo = imagenInfo;
             listaPeliculas[i].imagenDestacado = imagenDestacado;
             listaPeliculas[i].trailer = trailer;
+            listaPeliculas[i].publicar = publicar;
         }
     }
     // actualizar el LS
