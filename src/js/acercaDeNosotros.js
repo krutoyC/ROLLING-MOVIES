@@ -36,10 +36,13 @@ window.filtrar = function (){
 }
 
 botonBuscar.addEventListener(`click`,filtrar);
-buscar.addEventListener(`keyup`, function (event){
+
+
+buscar.addEventListener(`keypress`, function (event){
     if (event.keyCode === 13) { 
         event.preventDefault();
         console.log(event);
+         filtrar()
        }
 
 });

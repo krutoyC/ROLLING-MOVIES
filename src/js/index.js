@@ -193,3 +193,13 @@ window.filtrar = function (){
 }
 
 botonBuscar.addEventListener(`click`,filtrar);
+
+//BUSCAR CON ENTER
+buscar.addEventListener(`keypress`, function (event){
+    if (event.keyCode === 13) { 
+        event.preventDefault();
+        console.log(event);
+         filtrar()
+       }
+
+});
